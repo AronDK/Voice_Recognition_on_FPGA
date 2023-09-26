@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed Sep 20 14:22:12 2023
+# Process ID: 30828
+# Current directory: C:/Users/gonin/Documents/COMP3601/COMP3601-Project/COMP3601-LED
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent33784 C:\Users\gonin\Documents\COMP3601\COMP3601-Project\COMP3601-LED\COMP3601-LED.xpr
+# Log file: C:/Users/gonin/Documents/COMP3601/COMP3601-Project/COMP3601-LED/vivado.log
+# Journal file: C:/Users/gonin/Documents/COMP3601/COMP3601-Project/COMP3601-LED\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/gonin/Documents/COMP3601/COMP3601-Project/COMP3601-LED/COMP3601-LED.xpr
+update_compile_order -fileset sources_1
