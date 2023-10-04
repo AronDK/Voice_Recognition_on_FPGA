@@ -71,7 +71,6 @@ proc create_report { reportName command } {
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xck26-sfvc784-2LV-c
 
@@ -89,7 +88,7 @@ set_property ip_output_repo c:/Users/gonin/Documents/COMP3601/COMP3601-Project/C
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib c:/Users/gonin/Documents/COMP3601/COMP3601-Project/COMP3601-LED/COMP3601-LED.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
+read_verilog -library xil_defaultlib C:/Users/gonin/Documents/COMP3601/COMP3601-Project/COMP3601-LED/COMP3601-LED.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v
 add_files C:/Users/gonin/Documents/COMP3601/COMP3601-Project/COMP3601-LED/COMP3601-LED.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all c:/Users/gonin/Documents/COMP3601/COMP3601-Project/COMP3601-LED/COMP3601-LED.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/gonin/Documents/COMP3601/COMP3601-Project/COMP3601-LED/COMP3601-LED.gen/sources_1/bd/design_1/ip/design_1_zynq_ultra_ps_e_0_0/design_1_zynq_ultra_ps_e_0_0.xdc]
