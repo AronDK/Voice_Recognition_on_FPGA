@@ -34,23 +34,52 @@ end i2s_master;
 
 architecture Behavioral of i2s_master is
     --put your signals here
+    signal bclk: std_ulogic := '0';
+    signal word: std_ulogic := '1'; -- Start High
+    signal ws_counter: unsigned (2 downto 0) := "000";
+    signal bclk_counter: unsigned (3 downto 0) := "0000";
+    signal read_idle: std_logic := '1'; -- If 0, in 32-64 bit range, otherwise in 0-32 bit range (first 3 states)
     
 begin
     -----------------------------------------------------------------------
     -- hint: write code for bclk clock generator:
     -----------------------------------------------------------------------
     --implementation...:
-
+    process(clk_1)
+    begin
+        if falling_edge (clk_1) then 
+            case bclk_counter is
+                when "1011" =>
+                    bclk <= not(bclk);
+                    bclk_counter <= "0000";
+              when others =>
+                    bclk_counter <= bclk_counter + 1;
+            end case;
+       end if;
+        i2s_bclk <= bclk;
+    end process;
     ------------------------------------------------------------------------
     -- hint: write code for lrcl/ws clock generator:
     ------------------------------------------------------------------------
     --implementation...:
-    
+    process(bclk)
+    begin 
+        if falling_edge (bclk) then
+            case ws_counter is
+                when "100" =>
+                    word <= not(word);
+                    ws_counter <= "000";
+                when others =>
+                    ws_counter  <= ws_counter + 1;
+            end case;
+        end if;
+        i2s_lrcl  <= word;
+  end process;      
     ------------------------------------------------------------------------
     -- hint: write code for I2S FSM
     ------------------------------------------------------------------------
     --implementation...:
-
+    process(
     --------------------------------------------------
     -- hint: write code for FIFO data handshake
     --------------------------------------------------
