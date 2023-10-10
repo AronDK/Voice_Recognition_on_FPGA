@@ -40,6 +40,10 @@ architecture Behavioral of i2s_master is
     signal bclk_counter: unsigned (3 downto 0) := "0000";
     signal read_idle: std_logic := '1'; -- If 0, in 32-64 bit range, otherwise in 0-32 bit range (first 3 states)
     
+    signal data_buffer: std_logic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
+    signal bit_count: integer := 0;
+    signal fsm_state: integer := 0; 
+    
 begin
     -----------------------------------------------------------------------
     -- hint: write code for bclk clock generator:
@@ -79,11 +83,44 @@ begin
     -- hint: write code for I2S FSM
     ------------------------------------------------------------------------
     --implementation...:
-    process(
     --------------------------------------------------
     -- hint: write code for FIFO data handshake
     --------------------------------------------------
     -- hint: Useful link: https://encyclopedia2.thefreedictionary.com/Hand+shake+signal
     --implementation...:
     
+
+    -- I2S FSM and FIFO Data Handshake
+    process(bclk)
+    begin
+        if falling_edge(bclk) then
+            case fsm_state is
+                when 0 =>  -- Idle
+                    if read_idle = '1' then
+                        bit_count := 0;
+                        data_buffer := (others => '0');
+                        fsm_state := 1;
+                    end if;
+                when 1 =>  -- 18-bit data stream capture
+                    data_buffer(bit_count) <= i2s_dout;
+                    bit_count := bit_count + 1;
+                    if bit_count = PCM_PRECISION then
+                        fsm_state := 2;
+                    end if;
+                when 2 =>  -- Send bits to FIFO bus
+                    if fifo_full = '0' then
+                        fifo_din <= data_buffer;
+                        fifo_w_stb <= '1';
+                        fsm_state := 3;
+                    end if;
+                when 3 =>  -- Waiting state
+                    if rising_edge(bclk) then
+                        fsm_state := 0;
+                        fifo_w_stb <= '0';
+                    end if;
+            end case;
+        end if;
+    end process;
+
+
 end Behavioral;
