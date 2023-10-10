@@ -56,6 +56,7 @@ begin
                 when "1011" =>
                     bclk <= not(bclk);
                     bclk_counter <= "0000";
+                    bit_count <= bit_count + 1;
               when others =>
                     bclk_counter <= bclk_counter + 1;
             end case;
@@ -78,11 +79,29 @@ begin
             end case;
         end if;
         i2s_lrcl  <= word;
-  end process;      
+    end process;      
     ------------------------------------------------------------------------
     -- hint: write code for I2S FSM
     ------------------------------------------------------------------------
     --implementation...:
+    process(word)
+    begin
+       if falling_edge(word) then
+                bit_count <= 0;
+                read_idle <= '1';
+                fsm_state <= 1;
+            end if;
+            
+       if bit_count = PCM_PRECISION then -- 18-bit data stream capture
+                fsm_state <= 2;
+            end if;
+            
+       if rising_edge(word) then
+                fsm_state <= 0;
+                read_idle <= '0';
+            end if;
+       
+    end process;
     --------------------------------------------------
     -- hint: write code for FIFO data handshake
     --------------------------------------------------
@@ -91,35 +110,26 @@ begin
     
 
     -- I2S FSM and FIFO Data Handshake
-    process(bclk)
+    process(fsm_state)
     begin
-        if falling_edge(bclk) then
-            case fsm_state is
-                when 0 =>  -- Idle
-                    if read_idle = '1' then
-                        bit_count := 0;
-                        data_buffer := (others => '0');
-                        fsm_state := 1;
-                    end if;
-                when 1 =>  -- 18-bit data stream capture
+        case fsm_state is
+            when 0 =>  -- Idle
+                if read_idle = '1' then
+                    bit_count <= 0;
+                    data_buffer <= (others => '0'); -- Initialises all values to '0'
+                else 
+                    fifo_w_stb <= '0';
+                end if;
+            when 1 =>  -- 18-bit data stream capture
+                if rising_edge(bclk) then
                     data_buffer(bit_count) <= i2s_dout;
-                    bit_count := bit_count + 1;
-                    if bit_count = PCM_PRECISION then
-                        fsm_state := 2;
-                    end if;
-                when 2 =>  -- Send bits to FIFO bus
-                    if fifo_full = '0' then
-                        fifo_din <= data_buffer;
-                        fifo_w_stb <= '1';
-                        fsm_state := 3;
-                    end if;
-                when 3 =>  -- Waiting state
-                    if rising_edge(bclk) then
-                        fsm_state := 0;
-                        fifo_w_stb <= '0';
-                    end if;
-            end case;
-        end if;
+                end if;
+            when 2 =>  -- Send bits to FIFO bus
+                if fifo_full = '0' then
+                    fifo_din <= data_buffer;
+                    fifo_w_stb <= '1';
+                end if;
+        end case;
     end process;
 
 

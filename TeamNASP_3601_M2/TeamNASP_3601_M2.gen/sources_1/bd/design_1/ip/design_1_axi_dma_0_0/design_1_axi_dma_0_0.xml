@@ -5068,7 +5068,7 @@ Note: This value must be greater than or equal to the largest expected packet to
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:95032723</spirit:value>
+            <spirit:value>9:46e503d3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5082,11 +5082,11 @@ Note: This value must be greater than or equal to the largest expected packet to
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 04 00:15:07 UTC 2023</spirit:value>
+            <spirit:value>Tue Oct 10 10:39:27 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:95032723</spirit:value>
+            <spirit:value>9:46e503d3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5102,11 +5102,11 @@ Note: This value must be greater than or equal to the largest expected packet to
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 04 00:15:07 UTC 2023</spirit:value>
+            <spirit:value>Tue Oct 10 10:39:27 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:95032723</spirit:value>
+            <spirit:value>9:46e503d3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5147,7 +5147,7 @@ Note: This value must be greater than or equal to the largest expected packet to
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:3f0ae740</spirit:value>
+            <spirit:value>9:ea0c4b56</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5163,11 +5163,11 @@ Note: This value must be greater than or equal to the largest expected packet to
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 04 00:15:07 UTC 2023</spirit:value>
+            <spirit:value>Tue Oct 10 10:39:27 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:3f0ae740</spirit:value>
+            <spirit:value>9:ea0c4b56</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -5181,11 +5181,11 @@ Note: This value must be greater than or equal to the largest expected packet to
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Wed Oct 04 02:09:55 UTC 2023</spirit:value>
+            <spirit:value>Tue Oct 10 10:42:57 UTC 2023</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:95032723</spirit:value>
+            <spirit:value>9:46e503d3</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>

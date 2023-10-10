@@ -61,7 +61,7 @@
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary__________99.999____________0.010
+// __primary________99.999001____________0.010
 
 `timescale 1ps/1ps
 
@@ -70,6 +70,8 @@ module design_1_clk_wiz_0_0_clk_wiz
  (// Clock in ports
   // Clock out ports
   output        clk_out1,
+  // Status and control signals
+  input         reset,
   input         clk_in1
  );
   // Input buffering
@@ -116,6 +118,7 @@ wire clk_in2_design_1_clk_wiz_0_0;
   wire        clkout6_unused;
   wire        clkfbstopped_unused;
   wire        clkinstopped_unused;
+  wire        reset_high;
 
 
   
@@ -177,7 +180,8 @@ wire clk_in2_design_1_clk_wiz_0_0;
     .CLKINSTOPPED        (clkinstopped_unused),
     .CLKFBSTOPPED        (clkfbstopped_unused),
     .PWRDWN              (1'b0),
-    .RST                 (1'b0));
+    .RST                 (reset_high));
+  assign reset_high = reset; 
 
 // Clock Monitor clock assigning
 //--------------------------------------
