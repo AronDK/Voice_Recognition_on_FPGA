@@ -28,7 +28,7 @@ entity i2s_master is
         -- FIFO interface to MEMs mic
         fifo_din        : out std_logic_vector(DATA_WIDTH - 1 downto 0);
         fifo_w_stb      : out std_logic;    -- Write strobe: 1 = ready to write, 0 = busy
-        fifo_full       : in  std_logic     -- 1 = not full, 0 = full
+        fifo_full       : in  std_logic     -- 0 = not full, 1 = full
     );
 end i2s_master;
 
@@ -49,7 +49,7 @@ begin
     -- hint: write code for bclk clock generator:
     -----------------------------------------------------------------------
     --implementation...:
-    process(clk_1)
+    process(clk_1, bclk)
     begin
         if falling_edge (clk_1) then 
             case bclk_counter is
@@ -67,7 +67,7 @@ begin
     -- hint: write code for lrcl/ws clock generator:
     ------------------------------------------------------------------------
     --implementation...:
-    process(bclk)
+    process(bclk, word)
     begin 
         if falling_edge (bclk) then
             case ws_counter is
@@ -84,7 +84,7 @@ begin
     -- hint: write code for I2S FSM
     ------------------------------------------------------------------------
     --implementation...:
-    process(word)
+    process(word, bit_count)
     begin
        if falling_edge(word) then
                 bit_count <= 0;
@@ -100,7 +100,7 @@ begin
                 fsm_state <= 0;
                 read_idle <= '0';
             end if;
-       
+    
     end process;
     --------------------------------------------------
     -- hint: write code for FIFO data handshake
@@ -110,7 +110,7 @@ begin
     
 
     -- I2S FSM and FIFO Data Handshake
-    process(fsm_state)
+    process(fsm_state, bclk)
     begin
         case fsm_state is
             when 0 =>  -- Idle
@@ -129,6 +129,8 @@ begin
                     fifo_din <= data_buffer;
                     fifo_w_stb <= '1';
                 end if;
+            when others => -- do nothing
+                -- read_idle <= '1';
         end case;
     end process;
 
