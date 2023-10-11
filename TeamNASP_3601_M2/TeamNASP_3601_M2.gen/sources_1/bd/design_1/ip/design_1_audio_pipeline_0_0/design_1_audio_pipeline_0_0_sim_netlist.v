@@ -1,7 +1,7 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-// Date        : Tue Oct 10 22:56:12 2023
+// Date        : Wed Oct 11 11:16:57 2023
 // Host        : AronLaptop running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               c:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_audio_pipeline_0_0/design_1_audio_pipeline_0_0_sim_netlist.v
@@ -145,13 +145,13 @@ module design_1_audio_pipeline_0_0
   GND GND
        (.G(\<const0> ));
   design_1_audio_pipeline_0_0_audio_pipeline U0
-       (.axis_tlast(axis_tlast),
+       (.CLK(i2s_bclk),
+        .axis_tlast(axis_tlast),
         .axis_tready(axis_tready),
-        .axis_tvalid(axis_tvalid),
         .clk(clk),
         .clk_1(clk_1),
-        .i2s_bclk(i2s_bclk),
         .i2s_lrcl(i2s_lrcl),
+        .\rdp_reg[5] (axis_tvalid),
         .rst(rst),
         .s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr[4:2]),
@@ -174,13 +174,13 @@ endmodule
 
 (* ORIG_REF_NAME = "audio_pipeline" *) 
 module design_1_audio_pipeline_0_0_audio_pipeline
-   (s00_axi_awready,
+   (\rdp_reg[5] ,
+    s00_axi_awready,
     s00_axi_wready,
     s00_axi_arready,
     s00_axi_rdata,
-    i2s_bclk,
+    CLK,
     s00_axi_rvalid,
-    axis_tvalid,
     s00_axi_bvalid,
     axis_tlast,
     i2s_lrcl,
@@ -199,13 +199,13 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     s00_axi_aresetn,
     s00_axi_bready,
     s00_axi_rready);
+  output \rdp_reg[5] ;
   output s00_axi_awready;
   output s00_axi_wready;
   output s00_axi_arready;
   output [31:0]s00_axi_rdata;
-  output i2s_bclk;
+  output CLK;
   output s00_axi_rvalid;
-  output axis_tvalid;
   output s00_axi_bvalid;
   output axis_tlast;
   output i2s_lrcl;
@@ -225,52 +225,53 @@ module design_1_audio_pipeline_0_0_audio_pipeline
   input s00_axi_bready;
   input s00_axi_rready;
 
+  wire CLK;
   wire axis_tlast;
+  wire axis_tlast_i_10_n_0;
+  wire axis_tlast_i_11_n_0;
+  wire axis_tlast_i_13_n_0;
+  wire axis_tlast_i_2_n_0;
   wire axis_tlast_i_3_n_0;
   wire axis_tlast_i_4_n_0;
-  wire axis_tlast_i_5_n_0;
-  wire axis_tlast_i_6_n_0;
   wire axis_tlast_i_7_n_0;
-  wire axis_tlast_i_8_n_0;
-  wire axis_tlast_reg_i_10_n_2;
-  wire axis_tlast_reg_i_10_n_3;
-  wire axis_tlast_reg_i_10_n_4;
-  wire axis_tlast_reg_i_10_n_5;
-  wire axis_tlast_reg_i_10_n_6;
-  wire axis_tlast_reg_i_10_n_7;
-  wire axis_tlast_reg_i_11_n_0;
-  wire axis_tlast_reg_i_11_n_1;
-  wire axis_tlast_reg_i_11_n_2;
-  wire axis_tlast_reg_i_11_n_3;
-  wire axis_tlast_reg_i_11_n_4;
-  wire axis_tlast_reg_i_11_n_5;
-  wire axis_tlast_reg_i_11_n_6;
-  wire axis_tlast_reg_i_11_n_7;
-  wire axis_tlast_reg_i_12_n_0;
-  wire axis_tlast_reg_i_12_n_1;
+  wire axis_tlast_i_9_n_0;
   wire axis_tlast_reg_i_12_n_2;
   wire axis_tlast_reg_i_12_n_3;
   wire axis_tlast_reg_i_12_n_4;
   wire axis_tlast_reg_i_12_n_5;
   wire axis_tlast_reg_i_12_n_6;
   wire axis_tlast_reg_i_12_n_7;
-  wire axis_tlast_reg_i_9_n_0;
-  wire axis_tlast_reg_i_9_n_1;
-  wire axis_tlast_reg_i_9_n_2;
-  wire axis_tlast_reg_i_9_n_3;
-  wire axis_tlast_reg_i_9_n_4;
-  wire axis_tlast_reg_i_9_n_5;
-  wire axis_tlast_reg_i_9_n_6;
-  wire axis_tlast_reg_i_9_n_7;
+  wire axis_tlast_reg_i_14_n_0;
+  wire axis_tlast_reg_i_14_n_1;
+  wire axis_tlast_reg_i_14_n_2;
+  wire axis_tlast_reg_i_14_n_3;
+  wire axis_tlast_reg_i_14_n_4;
+  wire axis_tlast_reg_i_14_n_5;
+  wire axis_tlast_reg_i_14_n_6;
+  wire axis_tlast_reg_i_14_n_7;
+  wire axis_tlast_reg_i_6_n_0;
+  wire axis_tlast_reg_i_6_n_1;
+  wire axis_tlast_reg_i_6_n_2;
+  wire axis_tlast_reg_i_6_n_3;
+  wire axis_tlast_reg_i_6_n_4;
+  wire axis_tlast_reg_i_6_n_5;
+  wire axis_tlast_reg_i_6_n_6;
+  wire axis_tlast_reg_i_6_n_7;
+  wire axis_tlast_reg_i_8_n_0;
+  wire axis_tlast_reg_i_8_n_1;
+  wire axis_tlast_reg_i_8_n_2;
+  wire axis_tlast_reg_i_8_n_3;
+  wire axis_tlast_reg_i_8_n_4;
+  wire axis_tlast_reg_i_8_n_5;
+  wire axis_tlast_reg_i_8_n_6;
+  wire axis_tlast_reg_i_8_n_7;
   wire axis_tready;
-  wire axis_tvalid;
   wire clk;
   wire clk_1;
-  wire i2s_bclk;
   wire i2s_lrcl;
-  wire inst_fifo_n_0;
+  wire inst_fifo_n_1;
   wire inst_fifo_n_2;
-  wire load;
+  wire \rdp_reg[5] ;
   wire rst;
   wire s00_axi_aclk;
   wire [2:0]s00_axi_araddr;
@@ -293,10 +294,10 @@ module design_1_audio_pipeline_0_0_audio_pipeline
   wire \v_cnt[0]_i_10_n_0 ;
   wire \v_cnt[0]_i_11_n_0 ;
   wire \v_cnt[0]_i_12_n_0 ;
-  wire \v_cnt[0]_i_13_n_0 ;
-  wire \v_cnt[0]_i_14_n_0 ;
-  wire \v_cnt[0]_i_15_n_0 ;
   wire \v_cnt[0]_i_3_n_0 ;
+  wire \v_cnt[0]_i_4_n_0 ;
+  wire \v_cnt[0]_i_5_n_0 ;
+  wire \v_cnt[0]_i_6_n_0 ;
   wire \v_cnt[0]_i_7_n_0 ;
   wire \v_cnt[0]_i_8_n_0 ;
   wire \v_cnt[0]_i_9_n_0 ;
@@ -388,76 +389,78 @@ module design_1_audio_pipeline_0_0_audio_pipeline
   wire \v_cnt_reg[8]_i_1_n_7 ;
   wire \v_cnt_reg[8]_i_1_n_8 ;
   wire \v_cnt_reg[8]_i_1_n_9 ;
-  wire [7:6]NLW_axis_tlast_reg_i_10_CO_UNCONNECTED;
-  wire [7:7]NLW_axis_tlast_reg_i_10_O_UNCONNECTED;
+  wire [7:6]NLW_axis_tlast_reg_i_12_CO_UNCONNECTED;
+  wire [7:7]NLW_axis_tlast_reg_i_12_O_UNCONNECTED;
   wire [7:7]\NLW_v_cnt_reg[24]_i_1_CO_UNCONNECTED ;
 
-  LUT6 #(
-    .INIT(64'h0000000000000001)) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    axis_tlast_i_10
+       (.I0(v_cnt2[23]),
+        .I1(v_cnt2[22]),
+        .I2(v_cnt2[25]),
+        .I3(v_cnt2[24]),
+        .O(axis_tlast_i_10_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    axis_tlast_i_11
+       (.I0(v_cnt2[19]),
+        .I1(v_cnt2[18]),
+        .I2(v_cnt2[21]),
+        .I3(v_cnt2[20]),
+        .O(axis_tlast_i_11_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    axis_tlast_i_13
+       (.I0(v_cnt2[27]),
+        .I1(v_cnt2[26]),
+        .I2(v_cnt2[29]),
+        .I3(v_cnt2[28]),
+        .O(axis_tlast_i_13_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
     axis_tlast_i_2
-       (.I0(axis_tlast_i_3_n_0),
-        .I1(axis_tlast_i_4_n_0),
-        .I2(axis_tlast_i_5_n_0),
-        .I3(axis_tlast_i_6_n_0),
-        .I4(axis_tlast_i_7_n_0),
-        .I5(axis_tlast_i_8_n_0),
-        .O(load));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    axis_tlast_i_3
-       (.I0(v_cnt2[24]),
-        .I1(v_cnt2[25]),
-        .I2(v_cnt2[26]),
-        .I3(v_cnt2[27]),
-        .I4(v_cnt2[28]),
-        .I5(v_cnt2[29]),
-        .O(axis_tlast_i_3_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFB)) 
-    axis_tlast_i_4
-       (.I0(v_cnt2[6]),
-        .I1(v_cnt2[8]),
-        .I2(v_cnt2[7]),
-        .I3(v_cnt2[9]),
-        .I4(v_cnt2[10]),
-        .I5(v_cnt2[11]),
-        .O(axis_tlast_i_4_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    axis_tlast_i_5
-       (.I0(v_cnt2[18]),
-        .I1(v_cnt2[19]),
-        .I2(v_cnt2[20]),
-        .I3(v_cnt2[21]),
-        .I4(v_cnt2[22]),
-        .I5(v_cnt2[23]),
-        .O(axis_tlast_i_5_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
-    axis_tlast_i_6
        (.I0(v_cnt2[12]),
         .I1(v_cnt2[13]),
-        .I2(v_cnt2[14]),
-        .I3(v_cnt2[15]),
-        .I4(v_cnt2[16]),
-        .I5(v_cnt2[17]),
-        .O(axis_tlast_i_6_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
-    axis_tlast_i_7
-       (.I0(v_cnt2[30]),
-        .I1(v_cnt2[31]),
-        .O(axis_tlast_i_7_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFEF)) 
-    axis_tlast_i_8
-       (.I0(v_cnt2[1]),
-        .I1(v_cnt2[2]),
-        .I2(v_cnt_reg[0]),
+        .I2(v_cnt2[10]),
+        .I3(v_cnt2[11]),
+        .I4(axis_tlast_i_7_n_0),
+        .O(axis_tlast_i_2_n_0));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    axis_tlast_i_3
+       (.I0(v_cnt2[4]),
+        .I1(v_cnt2[5]),
+        .I2(v_cnt2[2]),
         .I3(v_cnt2[3]),
-        .I4(v_cnt2[4]),
-        .I5(v_cnt2[5]),
-        .O(axis_tlast_i_8_n_0));
+        .I4(axis_tlast_i_9_n_0),
+        .O(axis_tlast_i_3_n_0));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    axis_tlast_i_4
+       (.I0(axis_tlast_i_10_n_0),
+        .I1(axis_tlast_i_11_n_0),
+        .I2(v_cnt2[31]),
+        .I3(v_cnt2[30]),
+        .I4(v_cnt2[1]),
+        .I5(axis_tlast_i_13_n_0),
+        .O(axis_tlast_i_4_n_0));
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    axis_tlast_i_7
+       (.I0(v_cnt2[15]),
+        .I1(v_cnt2[14]),
+        .I2(v_cnt2[17]),
+        .I3(v_cnt2[16]),
+        .O(axis_tlast_i_7_n_0));
+  LUT4 #(
+    .INIT(16'hFFEF)) 
+    axis_tlast_i_9
+       (.I0(v_cnt2[7]),
+        .I1(v_cnt2[6]),
+        .I2(v_cnt2[8]),
+        .I3(v_cnt2[9]),
+        .O(axis_tlast_i_9_n_0));
   FDRE axis_tlast_reg
        (.C(clk),
         .CE(1'b1),
@@ -465,37 +468,37 @@ module design_1_audio_pipeline_0_0_audio_pipeline
         .Q(axis_tlast),
         .R(1'b0));
   (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 axis_tlast_reg_i_10
-       (.CI(axis_tlast_reg_i_9_n_0),
+  CARRY8 axis_tlast_reg_i_12
+       (.CI(axis_tlast_reg_i_14_n_0),
         .CI_TOP(1'b0),
-        .CO({NLW_axis_tlast_reg_i_10_CO_UNCONNECTED[7:6],axis_tlast_reg_i_10_n_2,axis_tlast_reg_i_10_n_3,axis_tlast_reg_i_10_n_4,axis_tlast_reg_i_10_n_5,axis_tlast_reg_i_10_n_6,axis_tlast_reg_i_10_n_7}),
+        .CO({NLW_axis_tlast_reg_i_12_CO_UNCONNECTED[7:6],axis_tlast_reg_i_12_n_2,axis_tlast_reg_i_12_n_3,axis_tlast_reg_i_12_n_4,axis_tlast_reg_i_12_n_5,axis_tlast_reg_i_12_n_6,axis_tlast_reg_i_12_n_7}),
         .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .O({NLW_axis_tlast_reg_i_10_O_UNCONNECTED[7],v_cnt2[31:25]}),
+        .O({NLW_axis_tlast_reg_i_12_O_UNCONNECTED[7],v_cnt2[31:25]}),
         .S({1'b0,v_cnt_reg[31:25]}));
   (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 axis_tlast_reg_i_11
-       (.CI(v_cnt_reg[0]),
+  CARRY8 axis_tlast_reg_i_14
+       (.CI(axis_tlast_reg_i_6_n_0),
         .CI_TOP(1'b0),
-        .CO({axis_tlast_reg_i_11_n_0,axis_tlast_reg_i_11_n_1,axis_tlast_reg_i_11_n_2,axis_tlast_reg_i_11_n_3,axis_tlast_reg_i_11_n_4,axis_tlast_reg_i_11_n_5,axis_tlast_reg_i_11_n_6,axis_tlast_reg_i_11_n_7}),
+        .CO({axis_tlast_reg_i_14_n_0,axis_tlast_reg_i_14_n_1,axis_tlast_reg_i_14_n_2,axis_tlast_reg_i_14_n_3,axis_tlast_reg_i_14_n_4,axis_tlast_reg_i_14_n_5,axis_tlast_reg_i_14_n_6,axis_tlast_reg_i_14_n_7}),
         .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .O(v_cnt2[8:1]),
-        .S(v_cnt_reg[8:1]));
+        .O(v_cnt2[24:17]),
+        .S(v_cnt_reg[24:17]));
   (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 axis_tlast_reg_i_12
-       (.CI(axis_tlast_reg_i_11_n_0),
+  CARRY8 axis_tlast_reg_i_6
+       (.CI(axis_tlast_reg_i_8_n_0),
         .CI_TOP(1'b0),
-        .CO({axis_tlast_reg_i_12_n_0,axis_tlast_reg_i_12_n_1,axis_tlast_reg_i_12_n_2,axis_tlast_reg_i_12_n_3,axis_tlast_reg_i_12_n_4,axis_tlast_reg_i_12_n_5,axis_tlast_reg_i_12_n_6,axis_tlast_reg_i_12_n_7}),
+        .CO({axis_tlast_reg_i_6_n_0,axis_tlast_reg_i_6_n_1,axis_tlast_reg_i_6_n_2,axis_tlast_reg_i_6_n_3,axis_tlast_reg_i_6_n_4,axis_tlast_reg_i_6_n_5,axis_tlast_reg_i_6_n_6,axis_tlast_reg_i_6_n_7}),
         .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .O(v_cnt2[16:9]),
         .S(v_cnt_reg[16:9]));
   (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 axis_tlast_reg_i_9
-       (.CI(axis_tlast_reg_i_12_n_0),
+  CARRY8 axis_tlast_reg_i_8
+       (.CI(v_cnt_reg[0]),
         .CI_TOP(1'b0),
-        .CO({axis_tlast_reg_i_9_n_0,axis_tlast_reg_i_9_n_1,axis_tlast_reg_i_9_n_2,axis_tlast_reg_i_9_n_3,axis_tlast_reg_i_9_n_4,axis_tlast_reg_i_9_n_5,axis_tlast_reg_i_9_n_6,axis_tlast_reg_i_9_n_7}),
+        .CO({axis_tlast_reg_i_8_n_0,axis_tlast_reg_i_8_n_1,axis_tlast_reg_i_8_n_2,axis_tlast_reg_i_8_n_3,axis_tlast_reg_i_8_n_4,axis_tlast_reg_i_8_n_5,axis_tlast_reg_i_8_n_6,axis_tlast_reg_i_8_n_7}),
         .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .O(v_cnt2[24:17]),
-        .S(v_cnt_reg[24:17]));
+        .O(v_cnt2[8:1]),
+        .S(v_cnt_reg[8:1]));
   design_1_audio_pipeline_0_0_ctrl_bus inst_ctrl_bus
        (.s00_axi_aclk(s00_axi_aclk),
         .s00_axi_araddr(s00_axi_araddr),
@@ -516,225 +519,322 @@ module design_1_audio_pipeline_0_0_audio_pipeline
         .s00_axi_wvalid(s00_axi_wvalid));
   design_1_audio_pipeline_0_0_fifo inst_fifo
        (.axis_tlast(axis_tlast),
+        .axis_tlast_reg(axis_tlast_i_2_n_0),
+        .axis_tlast_reg_0(axis_tlast_i_3_n_0),
+        .axis_tlast_reg_1(axis_tlast_i_4_n_0),
         .axis_tready(axis_tready),
-        .axis_tready_0(inst_fifo_n_0),
-        .axis_tvalid(axis_tvalid),
+        .axis_tready_0(inst_fifo_n_1),
         .clk(clk),
-        .load(load),
+        .\rdp_reg[5]_0 (\rdp_reg[5] ),
         .rst(rst),
-        .rst_0(inst_fifo_n_2));
+        .v_cnt_reg(v_cnt_reg[0]),
+        .v_cnt_reg_0_sp_1(inst_fifo_n_2));
   design_1_audio_pipeline_0_0_i2s_master inst_i2s_master
-       (.CLK(i2s_bclk),
+       (.bclk_reg_0(CLK),
         .clk_1(clk_1),
         .i2s_lrcl(i2s_lrcl));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[0]_i_10 
-       (.I0(v_cnt_reg[5]),
-        .I1(load),
-        .O(\v_cnt[0]_i_10_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \v_cnt[0]_i_11 
-       (.I0(v_cnt_reg[4]),
-        .I1(load),
-        .O(\v_cnt[0]_i_11_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \v_cnt[0]_i_12 
-       (.I0(v_cnt_reg[3]),
-        .I1(load),
-        .O(\v_cnt[0]_i_12_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \v_cnt[0]_i_13 
-       (.I0(v_cnt_reg[2]),
-        .I1(load),
-        .O(\v_cnt[0]_i_13_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \v_cnt[0]_i_14 
-       (.I0(v_cnt_reg[1]),
-        .I1(load),
-        .O(\v_cnt[0]_i_14_n_0 ));
-  LUT2 #(
-    .INIT(4'h1)) 
-    \v_cnt[0]_i_15 
        (.I0(v_cnt_reg[0]),
-        .I1(load),
-        .O(\v_cnt[0]_i_15_n_0 ));
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[2]),
+        .O(\v_cnt[0]_i_10_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
+    \v_cnt[0]_i_11 
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[1]),
+        .O(\v_cnt[0]_i_11_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \v_cnt[0]_i_12 
+       (.I0(v_cnt_reg[0]),
+        .O(\v_cnt[0]_i_12_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \v_cnt[0]_i_3 
        (.I0(rst),
         .O(\v_cnt[0]_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT4 #(
+    .INIT(16'hFEFF)) 
+    \v_cnt[0]_i_4 
+       (.I0(axis_tlast_i_4_n_0),
+        .I1(axis_tlast_i_3_n_0),
+        .I2(axis_tlast_i_2_n_0),
+        .I3(v_cnt_reg[0]),
+        .O(\v_cnt[0]_i_4_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
+    \v_cnt[0]_i_5 
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[7]),
+        .O(\v_cnt[0]_i_5_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
+    \v_cnt[0]_i_6 
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[6]),
+        .O(\v_cnt[0]_i_6_n_0 ));
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[0]_i_7 
        (.I0(v_cnt_reg[0]),
-        .I1(load),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[5]),
         .O(\v_cnt[0]_i_7_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[0]_i_8 
-       (.I0(v_cnt_reg[7]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[4]),
         .O(\v_cnt[0]_i_8_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[0]_i_9 
-       (.I0(v_cnt_reg[6]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[3]),
         .O(\v_cnt[0]_i_9_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[16]_i_2 
-       (.I0(v_cnt_reg[23]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[23]),
         .O(\v_cnt[16]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[16]_i_3 
-       (.I0(v_cnt_reg[22]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[22]),
         .O(\v_cnt[16]_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[16]_i_4 
-       (.I0(v_cnt_reg[21]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[21]),
         .O(\v_cnt[16]_i_4_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[16]_i_5 
-       (.I0(v_cnt_reg[20]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[20]),
         .O(\v_cnt[16]_i_5_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[16]_i_6 
-       (.I0(v_cnt_reg[19]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[19]),
         .O(\v_cnt[16]_i_6_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[16]_i_7 
-       (.I0(v_cnt_reg[18]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[18]),
         .O(\v_cnt[16]_i_7_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[16]_i_8 
-       (.I0(v_cnt_reg[17]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[17]),
         .O(\v_cnt[16]_i_8_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[16]_i_9 
-       (.I0(v_cnt_reg[16]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[16]),
         .O(\v_cnt[16]_i_9_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[24]_i_2 
-       (.I0(v_cnt_reg[31]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[31]),
         .O(\v_cnt[24]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[24]_i_3 
-       (.I0(v_cnt_reg[30]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[30]),
         .O(\v_cnt[24]_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[24]_i_4 
-       (.I0(v_cnt_reg[29]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[29]),
         .O(\v_cnt[24]_i_4_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[24]_i_5 
-       (.I0(v_cnt_reg[28]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[28]),
         .O(\v_cnt[24]_i_5_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[24]_i_6 
-       (.I0(v_cnt_reg[27]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[27]),
         .O(\v_cnt[24]_i_6_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[24]_i_7 
-       (.I0(v_cnt_reg[26]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[26]),
         .O(\v_cnt[24]_i_7_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[24]_i_8 
-       (.I0(v_cnt_reg[25]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[25]),
         .O(\v_cnt[24]_i_8_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[24]_i_9 
-       (.I0(v_cnt_reg[24]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[24]),
         .O(\v_cnt[24]_i_9_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[8]_i_2 
-       (.I0(v_cnt_reg[15]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[15]),
         .O(\v_cnt[8]_i_2_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[8]_i_3 
-       (.I0(v_cnt_reg[14]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[14]),
         .O(\v_cnt[8]_i_3_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[8]_i_4 
-       (.I0(v_cnt_reg[13]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[13]),
         .O(\v_cnt[8]_i_4_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[8]_i_5 
-       (.I0(v_cnt_reg[12]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[12]),
         .O(\v_cnt[8]_i_5_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[8]_i_6 
-       (.I0(v_cnt_reg[11]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[11]),
         .O(\v_cnt[8]_i_6_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[8]_i_7 
-       (.I0(v_cnt_reg[10]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[10]),
         .O(\v_cnt[8]_i_7_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[8]_i_8 
-       (.I0(v_cnt_reg[9]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[9]),
         .O(\v_cnt[8]_i_8_n_0 ));
-  LUT2 #(
-    .INIT(4'h2)) 
+  LUT5 #(
+    .INIT(32'hFFFD0000)) 
     \v_cnt[8]_i_9 
-       (.I0(v_cnt_reg[8]),
-        .I1(load),
+       (.I0(v_cnt_reg[0]),
+        .I1(axis_tlast_i_2_n_0),
+        .I2(axis_tlast_i_3_n_0),
+        .I3(axis_tlast_i_4_n_0),
+        .I4(v_cnt_reg[8]),
         .O(\v_cnt[8]_i_9_n_0 ));
   FDCE #(
     .INIT(1'b0)) 
     \v_cnt_reg[0] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[0]_i_2_n_15 ),
         .Q(v_cnt_reg[0]));
@@ -743,14 +843,14 @@ module design_1_audio_pipeline_0_0_audio_pipeline
        (.CI(1'b0),
         .CI_TOP(1'b0),
         .CO({\v_cnt_reg[0]_i_2_n_0 ,\v_cnt_reg[0]_i_2_n_1 ,\v_cnt_reg[0]_i_2_n_2 ,\v_cnt_reg[0]_i_2_n_3 ,\v_cnt_reg[0]_i_2_n_4 ,\v_cnt_reg[0]_i_2_n_5 ,\v_cnt_reg[0]_i_2_n_6 ,\v_cnt_reg[0]_i_2_n_7 }),
-        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,\v_cnt[0]_i_7_n_0 }),
+        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,\v_cnt[0]_i_4_n_0 }),
         .O({\v_cnt_reg[0]_i_2_n_8 ,\v_cnt_reg[0]_i_2_n_9 ,\v_cnt_reg[0]_i_2_n_10 ,\v_cnt_reg[0]_i_2_n_11 ,\v_cnt_reg[0]_i_2_n_12 ,\v_cnt_reg[0]_i_2_n_13 ,\v_cnt_reg[0]_i_2_n_14 ,\v_cnt_reg[0]_i_2_n_15 }),
-        .S({\v_cnt[0]_i_8_n_0 ,\v_cnt[0]_i_9_n_0 ,\v_cnt[0]_i_10_n_0 ,\v_cnt[0]_i_11_n_0 ,\v_cnt[0]_i_12_n_0 ,\v_cnt[0]_i_13_n_0 ,\v_cnt[0]_i_14_n_0 ,\v_cnt[0]_i_15_n_0 }));
+        .S({\v_cnt[0]_i_5_n_0 ,\v_cnt[0]_i_6_n_0 ,\v_cnt[0]_i_7_n_0 ,\v_cnt[0]_i_8_n_0 ,\v_cnt[0]_i_9_n_0 ,\v_cnt[0]_i_10_n_0 ,\v_cnt[0]_i_11_n_0 ,\v_cnt[0]_i_12_n_0 }));
   FDCE #(
     .INIT(1'b0)) 
     \v_cnt_reg[10] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[8]_i_1_n_13 ),
         .Q(v_cnt_reg[10]));
@@ -758,7 +858,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[11] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[8]_i_1_n_12 ),
         .Q(v_cnt_reg[11]));
@@ -766,7 +866,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[12] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[8]_i_1_n_11 ),
         .Q(v_cnt_reg[12]));
@@ -774,7 +874,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[13] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[8]_i_1_n_10 ),
         .Q(v_cnt_reg[13]));
@@ -782,7 +882,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[14] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[8]_i_1_n_9 ),
         .Q(v_cnt_reg[14]));
@@ -790,7 +890,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[15] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[8]_i_1_n_8 ),
         .Q(v_cnt_reg[15]));
@@ -798,7 +898,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[16] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[16]_i_1_n_15 ),
         .Q(v_cnt_reg[16]));
@@ -814,7 +914,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[17] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[16]_i_1_n_14 ),
         .Q(v_cnt_reg[17]));
@@ -822,7 +922,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[18] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[16]_i_1_n_13 ),
         .Q(v_cnt_reg[18]));
@@ -830,7 +930,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[19] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[16]_i_1_n_12 ),
         .Q(v_cnt_reg[19]));
@@ -838,7 +938,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[1] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[0]_i_2_n_14 ),
         .Q(v_cnt_reg[1]));
@@ -846,7 +946,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[20] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[16]_i_1_n_11 ),
         .Q(v_cnt_reg[20]));
@@ -854,7 +954,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[21] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[16]_i_1_n_10 ),
         .Q(v_cnt_reg[21]));
@@ -862,7 +962,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[22] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[16]_i_1_n_9 ),
         .Q(v_cnt_reg[22]));
@@ -870,7 +970,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[23] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[16]_i_1_n_8 ),
         .Q(v_cnt_reg[23]));
@@ -878,7 +978,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[24] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[24]_i_1_n_15 ),
         .Q(v_cnt_reg[24]));
@@ -894,7 +994,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[25] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[24]_i_1_n_14 ),
         .Q(v_cnt_reg[25]));
@@ -902,7 +1002,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[26] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[24]_i_1_n_13 ),
         .Q(v_cnt_reg[26]));
@@ -910,7 +1010,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[27] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[24]_i_1_n_12 ),
         .Q(v_cnt_reg[27]));
@@ -918,7 +1018,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[28] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[24]_i_1_n_11 ),
         .Q(v_cnt_reg[28]));
@@ -926,7 +1026,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[29] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[24]_i_1_n_10 ),
         .Q(v_cnt_reg[29]));
@@ -934,7 +1034,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[2] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[0]_i_2_n_13 ),
         .Q(v_cnt_reg[2]));
@@ -942,7 +1042,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[30] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[24]_i_1_n_9 ),
         .Q(v_cnt_reg[30]));
@@ -950,7 +1050,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[31] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[24]_i_1_n_8 ),
         .Q(v_cnt_reg[31]));
@@ -958,7 +1058,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[3] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[0]_i_2_n_12 ),
         .Q(v_cnt_reg[3]));
@@ -966,7 +1066,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[4] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[0]_i_2_n_11 ),
         .Q(v_cnt_reg[4]));
@@ -974,7 +1074,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[5] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[0]_i_2_n_10 ),
         .Q(v_cnt_reg[5]));
@@ -982,7 +1082,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[6] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[0]_i_2_n_9 ),
         .Q(v_cnt_reg[6]));
@@ -990,7 +1090,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[7] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[0]_i_2_n_8 ),
         .Q(v_cnt_reg[7]));
@@ -998,7 +1098,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[8] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[8]_i_1_n_15 ),
         .Q(v_cnt_reg[8]));
@@ -1014,7 +1114,7 @@ module design_1_audio_pipeline_0_0_audio_pipeline
     .INIT(1'b0)) 
     \v_cnt_reg[9] 
        (.C(clk),
-        .CE(inst_fifo_n_0),
+        .CE(inst_fifo_n_1),
         .CLR(\v_cnt[0]_i_3_n_0 ),
         .D(\v_cnt_reg[8]_i_1_n_14 ),
         .Q(v_cnt_reg[9]));
@@ -3495,51 +3595,40 @@ endmodule
 
 (* ORIG_REF_NAME = "fifo" *) 
 module design_1_audio_pipeline_0_0_fifo
-   (axis_tready_0,
-    axis_tvalid,
-    rst_0,
+   (\rdp_reg[5]_0 ,
+    axis_tready_0,
+    v_cnt_reg_0_sp_1,
     axis_tready,
-    load,
     rst,
+    v_cnt_reg,
+    axis_tlast_reg,
+    axis_tlast_reg_0,
+    axis_tlast_reg_1,
     axis_tlast,
     clk);
+  output \rdp_reg[5]_0 ;
   output axis_tready_0;
-  output axis_tvalid;
-  output rst_0;
+  output v_cnt_reg_0_sp_1;
   input axis_tready;
-  input load;
   input rst;
+  input [0:0]v_cnt_reg;
+  input axis_tlast_reg;
+  input axis_tlast_reg_0;
+  input axis_tlast_reg_1;
   input axis_tlast;
   input clk;
 
   wire axis_tlast;
+  wire axis_tlast0;
+  wire axis_tlast_reg;
+  wire axis_tlast_reg_0;
+  wire axis_tlast_reg_1;
   wire axis_tready;
   wire axis_tready_0;
-  wire axis_tvalid;
+  wire axis_tvalid_INST_0_i_1_n_0;
   wire axis_tvalid_INST_0_i_2_n_0;
-  wire axis_tvalid_INST_0_i_3_n_0;
-  wire axis_tvalid_INST_0_i_4_n_0;
-  wire axis_tvalid_INST_0_i_5_n_0;
-  wire axis_tvalid_INST_0_i_6_n_0;
-  wire axis_tvalid_INST_0_i_7_n_0;
-  wire axis_tvalid_INST_0_i_8_n_0;
-  wire axis_tvalid_INST_0_i_9_n_0;
   wire clk;
-  wire empty;
-  wire load;
-  wire [12:0]plusOp;
-  wire [12:1]plusOp__0;
-  wire plusOp__22_carry__0_n_5;
-  wire plusOp__22_carry__0_n_6;
-  wire plusOp__22_carry__0_n_7;
-  wire plusOp__22_carry_n_0;
-  wire plusOp__22_carry_n_1;
-  wire plusOp__22_carry_n_2;
-  wire plusOp__22_carry_n_3;
-  wire plusOp__22_carry_n_4;
-  wire plusOp__22_carry_n_5;
-  wire plusOp__22_carry_n_6;
-  wire plusOp__22_carry_n_7;
+  wire [12:1]plusOp;
   wire plusOp_carry__0_n_5;
   wire plusOp_carry__0_n_6;
   wire plusOp_carry__0_n_7;
@@ -3553,160 +3642,71 @@ module design_1_audio_pipeline_0_0_fifo
   wire plusOp_carry_n_7;
   wire \rdp[0]_i_1_n_0 ;
   wire \rdp[12]_i_1_n_0 ;
+  wire \rdp[12]_i_2_n_0 ;
   wire \rdp[12]_i_3_n_0 ;
-  wire \rdp[12]_i_4_n_0 ;
-  wire \rdp[12]_i_5_n_0 ;
-  wire \rdp[12]_i_6_n_0 ;
   wire [12:12]rdp_reg;
+  wire \rdp_reg[5]_0 ;
   wire [11:0]rdp_reg__0;
   wire rst;
-  wire rst_0;
-  wire sig_fifo_full;
-  wire \v_cnt[0]_i_16_n_0 ;
-  wire \v_cnt[0]_i_17_n_0 ;
-  wire \v_cnt[0]_i_4_n_0 ;
-  wire \v_cnt[0]_i_5_n_0 ;
-  wire \v_cnt[0]_i_6_n_0 ;
-  wire [12:12]wrp_reg;
-  wire \wrp_reg_n_0_[0] ;
-  wire \wrp_reg_n_0_[10] ;
-  wire \wrp_reg_n_0_[11] ;
-  wire \wrp_reg_n_0_[1] ;
-  wire \wrp_reg_n_0_[2] ;
-  wire \wrp_reg_n_0_[3] ;
-  wire \wrp_reg_n_0_[4] ;
-  wire \wrp_reg_n_0_[5] ;
-  wire \wrp_reg_n_0_[6] ;
-  wire \wrp_reg_n_0_[7] ;
-  wire \wrp_reg_n_0_[8] ;
-  wire \wrp_reg_n_0_[9] ;
-  wire [7:3]NLW_plusOp__22_carry__0_CO_UNCONNECTED;
-  wire [7:4]NLW_plusOp__22_carry__0_O_UNCONNECTED;
+  wire [0:0]v_cnt_reg;
+  wire v_cnt_reg_0_sn_1;
   wire [7:3]NLW_plusOp_carry__0_CO_UNCONNECTED;
   wire [7:4]NLW_plusOp_carry__0_O_UNCONNECTED;
 
-  LUT4 #(
-    .INIT(16'hBF80)) 
+  assign v_cnt_reg_0_sp_1 = v_cnt_reg_0_sn_1;
+  LUT6 #(
+    .INIT(64'h0002FFFF00020000)) 
     axis_tlast_i_1
-       (.I0(load),
-        .I1(axis_tready_0),
-        .I2(rst),
-        .I3(axis_tlast),
-        .O(rst_0));
-  LUT1 #(
-    .INIT(2'h1)) 
-    axis_tvalid_INST_0
-       (.I0(empty),
-        .O(axis_tvalid));
-  LUT6 #(
-    .INIT(64'h0440400400000000)) 
-    axis_tvalid_INST_0_i_1
-       (.I0(axis_tvalid_INST_0_i_2_n_0),
-        .I1(axis_tvalid_INST_0_i_3_n_0),
-        .I2(axis_tvalid_INST_0_i_4_n_0),
-        .I3(rdp_reg__0[6]),
-        .I4(\wrp_reg_n_0_[6] ),
-        .I5(axis_tvalid_INST_0_i_5_n_0),
-        .O(empty));
-  LUT5 #(
-    .INIT(32'hF77F7FF7)) 
-    axis_tvalid_INST_0_i_2
-       (.I0(\v_cnt[0]_i_5_n_0 ),
-        .I1(axis_tvalid_INST_0_i_6_n_0),
-        .I2(\wrp_reg_n_0_[3] ),
-        .I3(rdp_reg__0[3]),
-        .I4(axis_tvalid_INST_0_i_7_n_0),
-        .O(axis_tvalid_INST_0_i_2_n_0));
-  LUT6 #(
-    .INIT(64'h0082820028000082)) 
-    axis_tvalid_INST_0_i_3
-       (.I0(axis_tvalid_INST_0_i_8_n_0),
-        .I1(\wrp_reg_n_0_[11] ),
-        .I2(rdp_reg__0[11]),
-        .I3(rdp_reg__0[10]),
-        .I4(axis_tvalid_INST_0_i_9_n_0),
-        .I5(\wrp_reg_n_0_[10] ),
-        .O(axis_tvalid_INST_0_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h8000000000000000)) 
-    axis_tvalid_INST_0_i_4
-       (.I0(rdp_reg__0[5]),
-        .I1(rdp_reg__0[3]),
-        .I2(rdp_reg__0[1]),
-        .I3(rdp_reg__0[0]),
-        .I4(rdp_reg__0[2]),
-        .I5(rdp_reg__0[4]),
-        .O(axis_tvalid_INST_0_i_4_n_0));
-  LUT6 #(
-    .INIT(64'h2A95400040002A95)) 
-    axis_tvalid_INST_0_i_5
-       (.I0(\wrp_reg_n_0_[7] ),
-        .I1(rdp_reg__0[6]),
-        .I2(axis_tvalid_INST_0_i_4_n_0),
-        .I3(rdp_reg__0[7]),
-        .I4(rdp_reg__0[8]),
-        .I5(\wrp_reg_n_0_[8] ),
-        .O(axis_tvalid_INST_0_i_5_n_0));
-  LUT5 #(
-    .INIT(32'h29404029)) 
-    axis_tvalid_INST_0_i_6
-       (.I0(\wrp_reg_n_0_[4] ),
-        .I1(\v_cnt[0]_i_17_n_0 ),
-        .I2(rdp_reg__0[4]),
-        .I3(rdp_reg__0[5]),
-        .I4(\wrp_reg_n_0_[5] ),
-        .O(axis_tvalid_INST_0_i_6_n_0));
+       (.I0(v_cnt_reg),
+        .I1(axis_tlast_reg),
+        .I2(axis_tlast_reg_0),
+        .I3(axis_tlast_reg_1),
+        .I4(axis_tlast0),
+        .I5(axis_tlast),
+        .O(v_cnt_reg_0_sn_1));
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h80)) 
-    axis_tvalid_INST_0_i_7
-       (.I0(rdp_reg__0[2]),
-        .I1(rdp_reg__0[0]),
-        .I2(rdp_reg__0[1]),
-        .O(axis_tvalid_INST_0_i_7_n_0));
+    axis_tlast_i_5
+       (.I0(\rdp_reg[5]_0 ),
+        .I1(axis_tready),
+        .I2(rst),
+        .O(axis_tlast0));
   LUT6 #(
-    .INIT(64'h6999999999999999)) 
-    axis_tvalid_INST_0_i_8
-       (.I0(\wrp_reg_n_0_[9] ),
-        .I1(rdp_reg__0[9]),
-        .I2(rdp_reg__0[8]),
-        .I3(rdp_reg__0[6]),
-        .I4(axis_tvalid_INST_0_i_4_n_0),
-        .I5(rdp_reg__0[7]),
-        .O(axis_tvalid_INST_0_i_8_n_0));
-  LUT5 #(
-    .INIT(32'h80000000)) 
-    axis_tvalid_INST_0_i_9
+    .INIT(64'hFFFFFFFFBFFFFFFF)) 
+    axis_tvalid_INST_0
+       (.I0(axis_tvalid_INST_0_i_1_n_0),
+        .I1(rdp_reg__0[5]),
+        .I2(rdp_reg__0[4]),
+        .I3(rdp_reg__0[7]),
+        .I4(rdp_reg__0[6]),
+        .I5(axis_tvalid_INST_0_i_2_n_0),
+        .O(\rdp_reg[5]_0 ));
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    axis_tvalid_INST_0_i_1
        (.I0(rdp_reg__0[9]),
-        .I1(rdp_reg__0[7]),
-        .I2(axis_tvalid_INST_0_i_4_n_0),
-        .I3(rdp_reg__0[6]),
-        .I4(rdp_reg__0[8]),
-        .O(axis_tvalid_INST_0_i_9_n_0));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 plusOp__22_carry
-       (.CI(rdp_reg__0[0]),
-        .CI_TOP(1'b0),
-        .CO({plusOp__22_carry_n_0,plusOp__22_carry_n_1,plusOp__22_carry_n_2,plusOp__22_carry_n_3,plusOp__22_carry_n_4,plusOp__22_carry_n_5,plusOp__22_carry_n_6,plusOp__22_carry_n_7}),
-        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .O(plusOp__0[8:1]),
-        .S(rdp_reg__0[8:1]));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY8 plusOp__22_carry__0
-       (.CI(plusOp__22_carry_n_0),
-        .CI_TOP(1'b0),
-        .CO({NLW_plusOp__22_carry__0_CO_UNCONNECTED[7:3],plusOp__22_carry__0_n_5,plusOp__22_carry__0_n_6,plusOp__22_carry__0_n_7}),
-        .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .O({NLW_plusOp__22_carry__0_O_UNCONNECTED[7:4],plusOp__0[12:9]}),
-        .S({1'b0,1'b0,1'b0,1'b0,rdp_reg,rdp_reg__0[11:9]}));
+        .I1(rdp_reg__0[8]),
+        .I2(rdp_reg__0[11]),
+        .I3(rdp_reg__0[10]),
+        .O(axis_tvalid_INST_0_i_1_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'h7FFF)) 
+    axis_tvalid_INST_0_i_2
+       (.I0(rdp_reg__0[1]),
+        .I1(rdp_reg__0[0]),
+        .I2(rdp_reg__0[3]),
+        .I3(rdp_reg__0[2]),
+        .O(axis_tvalid_INST_0_i_2_n_0));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY8 plusOp_carry
-       (.CI(\wrp_reg_n_0_[0] ),
+       (.CI(rdp_reg__0[0]),
         .CI_TOP(1'b0),
         .CO({plusOp_carry_n_0,plusOp_carry_n_1,plusOp_carry_n_2,plusOp_carry_n_3,plusOp_carry_n_4,plusOp_carry_n_5,plusOp_carry_n_6,plusOp_carry_n_7}),
         .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .O(plusOp[8:1]),
-        .S({\wrp_reg_n_0_[8] ,\wrp_reg_n_0_[7] ,\wrp_reg_n_0_[6] ,\wrp_reg_n_0_[5] ,\wrp_reg_n_0_[4] ,\wrp_reg_n_0_[3] ,\wrp_reg_n_0_[2] ,\wrp_reg_n_0_[1] }));
+        .S(rdp_reg__0[8:1]));
   (* ADDER_THRESHOLD = "35" *) 
   CARRY8 plusOp_carry__0
        (.CI(plusOp_carry_n_0),
@@ -3714,70 +3714,42 @@ module design_1_audio_pipeline_0_0_fifo
         .CO({NLW_plusOp_carry__0_CO_UNCONNECTED[7:3],plusOp_carry__0_n_5,plusOp_carry__0_n_6,plusOp_carry__0_n_7}),
         .DI({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
         .O({NLW_plusOp_carry__0_O_UNCONNECTED[7:4],plusOp[12:9]}),
-        .S({1'b0,1'b0,1'b0,1'b0,wrp_reg,\wrp_reg_n_0_[11] ,\wrp_reg_n_0_[10] ,\wrp_reg_n_0_[9] }));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+        .S({1'b0,1'b0,1'b0,1'b0,rdp_reg,rdp_reg__0[11:9]}));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \rdp[0]_i_1 
        (.I0(rdp_reg__0[0]),
         .O(\rdp[0]_i_1_n_0 ));
-  LUT3 #(
-    .INIT(8'hF4)) 
+  LUT5 #(
+    .INIT(32'h8888F888)) 
     \rdp[12]_i_1 
-       (.I0(empty),
+       (.I0(\rdp_reg[5]_0 ),
         .I1(axis_tready),
-        .I2(sig_fifo_full),
+        .I2(\rdp[12]_i_2_n_0 ),
+        .I3(\rdp[12]_i_3_n_0 ),
+        .I4(rdp_reg__0[0]),
         .O(\rdp[12]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h0000800080000000)) 
+    .INIT(64'h0000000000000001)) 
     \rdp[12]_i_2 
-       (.I0(\rdp[12]_i_3_n_0 ),
-        .I1(\rdp[12]_i_4_n_0 ),
-        .I2(\rdp[12]_i_5_n_0 ),
-        .I3(\rdp[12]_i_6_n_0 ),
-        .I4(rdp_reg),
-        .I5(wrp_reg),
-        .O(sig_fifo_full));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    \rdp[12]_i_3 
-       (.I0(rdp_reg__0[6]),
-        .I1(\wrp_reg_n_0_[6] ),
-        .I2(\wrp_reg_n_0_[8] ),
-        .I3(rdp_reg__0[8]),
-        .I4(\wrp_reg_n_0_[7] ),
-        .I5(rdp_reg__0[7]),
-        .O(\rdp[12]_i_3_n_0 ));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    \rdp[12]_i_4 
-       (.I0(rdp_reg__0[9]),
-        .I1(\wrp_reg_n_0_[9] ),
-        .I2(\wrp_reg_n_0_[11] ),
-        .I3(rdp_reg__0[11]),
-        .I4(\wrp_reg_n_0_[10] ),
-        .I5(rdp_reg__0[10]),
-        .O(\rdp[12]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    \rdp[12]_i_5 
-       (.I0(\wrp_reg_n_0_[0] ),
-        .I1(rdp_reg__0[0]),
-        .I2(\wrp_reg_n_0_[2] ),
-        .I3(rdp_reg__0[2]),
-        .I4(\wrp_reg_n_0_[1] ),
-        .I5(rdp_reg__0[1]),
-        .O(\rdp[12]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h9009000000009009)) 
-    \rdp[12]_i_6 
        (.I0(rdp_reg__0[3]),
-        .I1(\wrp_reg_n_0_[3] ),
-        .I2(\wrp_reg_n_0_[5] ),
-        .I3(rdp_reg__0[5]),
-        .I4(\wrp_reg_n_0_[4] ),
-        .I5(rdp_reg__0[4]),
-        .O(\rdp[12]_i_6_n_0 ));
+        .I1(rdp_reg__0[4]),
+        .I2(rdp_reg__0[1]),
+        .I3(rdp_reg__0[2]),
+        .I4(rdp_reg__0[6]),
+        .I5(rdp_reg__0[5]),
+        .O(\rdp[12]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h0000000100000000)) 
+    \rdp[12]_i_3 
+       (.I0(rdp_reg__0[9]),
+        .I1(rdp_reg__0[10]),
+        .I2(rdp_reg__0[7]),
+        .I3(rdp_reg__0[8]),
+        .I4(rdp_reg__0[11]),
+        .I5(rdp_reg),
+        .O(\rdp[12]_i_3_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \rdp_reg[0] 
@@ -3791,7 +3763,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[10] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[10]),
+        .D(plusOp[10]),
         .Q(rdp_reg__0[10]),
         .R(1'b0));
   FDRE #(
@@ -3799,7 +3771,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[11] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[11]),
+        .D(plusOp[11]),
         .Q(rdp_reg__0[11]),
         .R(1'b0));
   FDRE #(
@@ -3807,7 +3779,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[12] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[12]),
+        .D(plusOp[12]),
         .Q(rdp_reg),
         .R(1'b0));
   FDRE #(
@@ -3815,7 +3787,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[1] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[1]),
+        .D(plusOp[1]),
         .Q(rdp_reg__0[1]),
         .R(1'b0));
   FDRE #(
@@ -3823,7 +3795,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[2] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[2]),
+        .D(plusOp[2]),
         .Q(rdp_reg__0[2]),
         .R(1'b0));
   FDRE #(
@@ -3831,7 +3803,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[3] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[3]),
+        .D(plusOp[3]),
         .Q(rdp_reg__0[3]),
         .R(1'b0));
   FDRE #(
@@ -3839,7 +3811,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[4] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[4]),
+        .D(plusOp[4]),
         .Q(rdp_reg__0[4]),
         .R(1'b0));
   FDRE #(
@@ -3847,7 +3819,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[5] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[5]),
+        .D(plusOp[5]),
         .Q(rdp_reg__0[5]),
         .R(1'b0));
   FDRE #(
@@ -3855,7 +3827,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[6] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[6]),
+        .D(plusOp[6]),
         .Q(rdp_reg__0[6]),
         .R(1'b0));
   FDRE #(
@@ -3863,7 +3835,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[7] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[7]),
+        .D(plusOp[7]),
         .Q(rdp_reg__0[7]),
         .R(1'b0));
   FDRE #(
@@ -3871,7 +3843,7 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[8] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[8]),
+        .D(plusOp[8]),
         .Q(rdp_reg__0[8]),
         .R(1'b0));
   FDRE #(
@@ -3879,190 +3851,32 @@ module design_1_audio_pipeline_0_0_fifo
     \rdp_reg[9] 
        (.C(clk),
         .CE(\rdp[12]_i_1_n_0 ),
-        .D(plusOp__0[9]),
+        .D(plusOp[9]),
         .Q(rdp_reg__0[9]),
         .R(1'b0));
-  LUT5 #(
-    .INIT(32'h2AAAAAAA)) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT2 #(
+    .INIT(4'h8)) 
     \v_cnt[0]_i_1 
-       (.I0(axis_tready),
-        .I1(\v_cnt[0]_i_4_n_0 ),
-        .I2(axis_tvalid_INST_0_i_3_n_0),
-        .I3(\v_cnt[0]_i_5_n_0 ),
-        .I4(\v_cnt[0]_i_6_n_0 ),
+       (.I0(\rdp_reg[5]_0 ),
+        .I1(axis_tready),
         .O(axis_tready_0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h69999999)) 
-    \v_cnt[0]_i_16 
-       (.I0(\wrp_reg_n_0_[3] ),
-        .I1(rdp_reg__0[3]),
-        .I2(rdp_reg__0[2]),
-        .I3(rdp_reg__0[0]),
-        .I4(rdp_reg__0[1]),
-        .O(\v_cnt[0]_i_16_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT4 #(
-    .INIT(16'h8000)) 
-    \v_cnt[0]_i_17 
-       (.I0(rdp_reg__0[3]),
-        .I1(rdp_reg__0[1]),
-        .I2(rdp_reg__0[0]),
-        .I3(rdp_reg__0[2]),
-        .O(\v_cnt[0]_i_17_n_0 ));
-  LUT4 #(
-    .INIT(16'h6900)) 
-    \v_cnt[0]_i_4 
-       (.I0(axis_tvalid_INST_0_i_4_n_0),
-        .I1(rdp_reg__0[6]),
-        .I2(\wrp_reg_n_0_[6] ),
-        .I3(axis_tvalid_INST_0_i_5_n_0),
-        .O(\v_cnt[0]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'h0041820014000082)) 
-    \v_cnt[0]_i_5 
-       (.I0(\wrp_reg_n_0_[0] ),
-        .I1(\wrp_reg_n_0_[2] ),
-        .I2(rdp_reg__0[2]),
-        .I3(rdp_reg__0[1]),
-        .I4(rdp_reg__0[0]),
-        .I5(\wrp_reg_n_0_[1] ),
-        .O(\v_cnt[0]_i_5_n_0 ));
-  LUT6 #(
-    .INIT(64'h0082820028000082)) 
-    \v_cnt[0]_i_6 
-       (.I0(\v_cnt[0]_i_16_n_0 ),
-        .I1(\wrp_reg_n_0_[5] ),
-        .I2(rdp_reg__0[5]),
-        .I3(rdp_reg__0[4]),
-        .I4(\v_cnt[0]_i_17_n_0 ),
-        .I5(\wrp_reg_n_0_[4] ),
-        .O(\v_cnt[0]_i_6_n_0 ));
-  LUT1 #(
-    .INIT(2'h1)) 
-    \wrp[0]_i_1 
-       (.I0(\wrp_reg_n_0_[0] ),
-        .O(plusOp[0]));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[0] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[0]),
-        .Q(\wrp_reg_n_0_[0] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[10] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[10]),
-        .Q(\wrp_reg_n_0_[10] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[11] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[11]),
-        .Q(\wrp_reg_n_0_[11] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[12] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[12]),
-        .Q(wrp_reg),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[1] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[1]),
-        .Q(\wrp_reg_n_0_[1] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[2] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[2]),
-        .Q(\wrp_reg_n_0_[2] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[3] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[3]),
-        .Q(\wrp_reg_n_0_[3] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[4] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[4]),
-        .Q(\wrp_reg_n_0_[4] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[5] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[5]),
-        .Q(\wrp_reg_n_0_[5] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[6] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[6]),
-        .Q(\wrp_reg_n_0_[6] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[7] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[7]),
-        .Q(\wrp_reg_n_0_[7] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[8] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[8]),
-        .Q(\wrp_reg_n_0_[8] ),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \wrp_reg[9] 
-       (.C(clk),
-        .CE(1'b1),
-        .D(plusOp[9]),
-        .Q(\wrp_reg_n_0_[9] ),
-        .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "i2s_master" *) 
 module design_1_audio_pipeline_0_0_i2s_master
-   (CLK,
+   (bclk_reg_0,
     i2s_lrcl,
     clk_1);
-  output CLK;
+  output bclk_reg_0;
   output i2s_lrcl;
   input clk_1;
 
-  wire CLK;
   wire [3:0]bclk_counter;
   wire \bclk_counter[2]_i_1_n_0 ;
   wire \bclk_counter[3]_i_1_n_0 ;
   wire bclk_i_1_n_0;
+  wire bclk_reg_0;
   wire clk_1;
   wire i2s_lrcl;
   wire [3:0]plusOp;
@@ -4153,7 +3967,7 @@ module design_1_audio_pipeline_0_0_i2s_master
         .I1(bclk_counter[1]),
         .I2(bclk_counter[3]),
         .I3(bclk_counter[2]),
-        .I4(CLK),
+        .I4(bclk_reg_0),
         .O(bclk_i_1_n_0));
   FDRE #(
     .INIT(1'b0),
@@ -4162,7 +3976,7 @@ module design_1_audio_pipeline_0_0_i2s_master
        (.C(clk_1),
         .CE(1'b1),
         .D(bclk_i_1_n_0),
-        .Q(CLK),
+        .Q(bclk_reg_0),
         .R(1'b0));
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
@@ -4177,7 +3991,7 @@ module design_1_audio_pipeline_0_0_i2s_master
     .INIT(1'b1),
     .IS_C_INVERTED(1'b1)) 
     word_reg
-       (.C(CLK),
+       (.C(bclk_reg_0),
         .CE(1'b1),
         .D(word_i_1_n_0),
         .Q(i2s_lrcl),
@@ -4209,7 +4023,7 @@ module design_1_audio_pipeline_0_0_i2s_master
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \ws_counter_reg[0] 
-       (.C(CLK),
+       (.C(bclk_reg_0),
         .CE(1'b1),
         .D(\ws_counter[0]_i_1_n_0 ),
         .Q(ws_counter[0]),
@@ -4218,7 +4032,7 @@ module design_1_audio_pipeline_0_0_i2s_master
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \ws_counter_reg[1] 
-       (.C(CLK),
+       (.C(bclk_reg_0),
         .CE(1'b1),
         .D(\ws_counter[1]_i_1_n_0 ),
         .Q(ws_counter[1]),
@@ -4227,7 +4041,7 @@ module design_1_audio_pipeline_0_0_i2s_master
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
     \ws_counter_reg[2] 
-       (.C(CLK),
+       (.C(bclk_reg_0),
         .CE(1'b1),
         .D(\ws_counter[2]_i_1_n_0 ),
         .Q(ws_counter[2]),

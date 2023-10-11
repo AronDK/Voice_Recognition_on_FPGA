@@ -110,7 +110,7 @@ begin
     
 
     -- I2S FSM and FIFO Data Handshake
-    process(fsm_state, bclk)
+    process(fsm_state, bit_count)
     begin
         case fsm_state is
             when 0 =>  -- Idle
@@ -121,9 +121,7 @@ begin
                     fifo_w_stb <= '0';
                 end if;
             when 1 =>  -- 18-bit data stream capture
-                if rising_edge(bclk) then
-                    data_buffer(bit_count) <= i2s_dout;
-                end if;
+                fifo_din(bit_count) <= i2s_dout;                
             when 2 =>  -- Send bits to FIFO bus
                 if fifo_full = '0' then
                     fifo_din <= data_buffer;
