@@ -8,7 +8,7 @@ use work.aud_param.all;
 -- I2S master interface for the SPH0645LM4H MEMs mic
 -- useful links:
 --   - https://diyi0t.com/i2s-sound-tutorial-for-esp32/
---   - https://cdn-learn.adafruit.com/downloads/pdf/adafruit-i2s-mems-microphone-breakout.pdf
+--   - https://cdn-learn.adafruit.com/downloads/pdf/adafruit-i2s-mems-q1microphone-breakout.pdf
 --   - https://cdn-shop.adafruit.com/product-files/3421/i2S+Datasheet.PDF
 
 entity i2s_master is
@@ -40,7 +40,6 @@ architecture Behavioral of i2s_master is
     signal bclk_counter: unsigned (3 downto 0) := "0000";
     signal read_idle: std_logic := '1'; -- If 0, in 32-64 bit range, otherwise in 0-32 bit range (first 3 states)
     
-    signal data_buffer: std_logic_vector(DATA_WIDTH-1 downto 0) := (others => '0');
     signal bit_count: integer := 0;
     signal fsm_state: integer := 0; 
     
@@ -60,6 +59,9 @@ begin
               when others =>
                     bclk_counter <= bclk_counter + 1;
             end case;
+            if read_idle = '1' then
+                bit_count <= 0;
+            end if;
        end if;
         i2s_bclk <= bclk;
     end process;
@@ -87,7 +89,6 @@ begin
     process(word, bit_count)
     begin
        if falling_edge(word) then
-                bit_count <= 0;
                 read_idle <= '1';
                 fsm_state <= 1;
             end if;
@@ -114,23 +115,18 @@ begin
     begin
         case fsm_state is
             when 0 =>  -- Idle
-                if read_idle = '1' then
-                    bit_count <= 0;
-                    data_buffer <= (others => '0'); -- Initialises all values to '0'
-                else 
+                if read_idle = '0' then
                     fifo_w_stb <= '0';
                 end if;
             when 1 =>  -- 18-bit data stream capture
-                fifo_din(bit_count) <= i2s_dout;                
+                fifo_din(bit_count) <= i2s_dout;        -- Flush Buffer after finished        
             when 2 =>  -- Send bits to FIFO bus
                 if fifo_full = '0' then
-                    fifo_din <= data_buffer;
                     fifo_w_stb <= '1';
                 end if;
             when others => -- do nothing
                 -- read_idle <= '1';
         end case;
     end process;
-
 
 end Behavioral;

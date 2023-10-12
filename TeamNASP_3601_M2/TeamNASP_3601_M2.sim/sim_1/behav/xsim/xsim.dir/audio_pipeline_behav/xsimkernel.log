@@ -1,0 +1,4 @@
+Running: xsim.dir/audio_pipeline_behav/xsimk.exe -simmode gui -wdb audio_pipeline_behav.wdb -simrunnum 0 -socket 54076
+Design successfully loaded
+Design Loading Memory Usage: 7940 KB (Peak: 7940 KB)
+Design Loading CPU Usage: 0 ms

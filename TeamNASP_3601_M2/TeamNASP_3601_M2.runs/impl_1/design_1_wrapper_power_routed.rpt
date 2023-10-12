@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Wed Oct 11 11:20:18 2023
+| Date             : Thu Oct 12 15:17:53 2023
 | Host             : AronLaptop running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 2.757        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 2.434        |
+| Dynamic (W)              | 2.433        |
 | Device Static (W)        | 0.323        |
 | Effective TJA (C/W)      | 2.3          |
 | Max Ambient (C)          | 78.6         |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.007 |        6 |       --- |             --- |
-| CLB Logic                |     0.006 |     7188 |       --- |             --- |
+| CLB Logic                |     0.006 |     7224 |       --- |             --- |
 |   LUT as Distributed RAM |     0.004 |      196 |     57600 |            0.34 |
-|   LUT as Logic           |     0.002 |     2305 |    117120 |            1.97 |
+|   LUT as Logic           |     0.002 |     2314 |    117120 |            1.98 |
 |   LUT as Shift Register  |    <0.001 |      117 |     57600 |            0.20 |
-|   Register               |    <0.001 |     3491 |    234240 |            1.49 |
-|   CARRY8                 |    <0.001 |       30 |     14640 |            0.20 |
-|   Others                 |     0.000 |      266 |       --- |             --- |
+|   Register               |    <0.001 |     3506 |    234240 |            1.50 |
+|   CARRY8                 |    <0.001 |       32 |     14640 |            0.22 |
+|   Others                 |     0.000 |      268 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |        2 |    117120 |           <0.01 |
-| Signals                  |     0.002 |     5420 |       --- |             --- |
+| Signals                  |     0.002 |     5465 |       --- |             --- |
 | Block RAM                |    <0.001 |        1 |       144 |            0.69 |
 | MMCM                     |     0.000 |        0 |       --- |             --- |
 | I/O                      |     0.001 |        2 |       186 |            1.08 |
@@ -79,7 +79,7 @@ Table of Contents
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source          | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint          |       0.720 |     0.108 |       0.022 |      0.087 |       NA    | Unspecified | NA         |
+| Vccint          |       0.720 |     0.108 |       0.021 |      0.087 |       NA    | Unspecified | NA         |
 | Vccint_io       |       0.850 |     0.036 |       0.000 |      0.036 |       NA    | Unspecified | NA         |
 | Vccbram         |       0.850 |     0.001 |       0.000 |      0.001 |       NA    | Unspecified | NA         |
 | Vccaux          |       1.800 |     0.075 |       0.000 |      0.075 |       NA    | Unspecified | NA         |
@@ -168,8 +168,8 @@ Table of Contents
 +-----------------------+-----------+
 | Name                  | Power (W) |
 +-----------------------+-----------+
-| design_1_wrapper      |     2.434 |
-|   design_1_i          |     2.433 |
+| design_1_wrapper      |     2.433 |
+|   design_1_i          |     2.432 |
 |     axi_dma_0         |     0.003 |
 |       U0              |     0.003 |
 |     axi_smc           |     0.007 |

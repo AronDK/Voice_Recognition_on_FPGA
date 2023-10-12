@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Wed Oct 11 11:16:15 2023
-# Process ID: 10720
+# Start of session at: Thu Oct 12 15:12:00 2023
+# Process ID: 21012
 # Current directory: C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1
 # Command line: vivado.exe -log design_1_audio_pipeline_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_audio_pipeline_0_0.tcl
 # Log file: C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1/design_1_audio_pipeline_0_0.vds
@@ -22,9 +22,9 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xck26'
 INFO: [Device 21-403] Loading part xck26-sfvc784-2LV-c
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 30564
+INFO: [Synth 8-7075] Helper process launched with PID 19536
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1489.281 ; gain = 123.715
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1634.500 ; gain = 123.754
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'design_1_audio_pipeline_0_0' [c:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_audio_pipeline_0_0/synth/design_1_audio_pipeline_0_0.vhd:92]
 	Parameter PCM_PRECISION bound to: 18 - type: integer 
@@ -47,10 +47,9 @@ INFO: [Synth 8-256] done synthesizing module 'ctrl_bus' (1#1) [C:/Users/gonin/Do
 	Parameter PCM_PRECISION bound to: 18 - type: integer 
 INFO: [Synth 8-3491] module 'i2s_master' declared at 'C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:14' bound to instance 'inst_i2s_master' of component 'i2s_master' [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/audio_pipeline.vhd:137]
 INFO: [Synth 8-638] synthesizing module 'i2s_master' [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:35]
-WARNING: [Synth 8-614] signal 'read_idle' is read in the process but is not in the sensitivity list [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:113]
-WARNING: [Synth 8-614] signal 'i2s_dout' is read in the process but is not in the sensitivity list [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:113]
-WARNING: [Synth 8-614] signal 'fifo_full' is read in the process but is not in the sensitivity list [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:113]
-WARNING: [Synth 8-614] signal 'data_buffer' is read in the process but is not in the sensitivity list [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:113]
+WARNING: [Synth 8-614] signal 'read_idle' is read in the process but is not in the sensitivity list [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:114]
+WARNING: [Synth 8-614] signal 'i2s_dout' is read in the process but is not in the sensitivity list [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:114]
+WARNING: [Synth 8-614] signal 'fifo_full' is read in the process but is not in the sensitivity list [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:114]
 INFO: [Synth 8-256] done synthesizing module 'i2s_master' (2#1) [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:35]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter FIFO_DEPTH bound to: 12 - type: integer 
@@ -61,31 +60,31 @@ WARNING: [Synth 8-614] signal 'rst' is read in the process but is not in the sen
 INFO: [Synth 8-256] done synthesizing module 'audio_pipeline' (4#1) [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/audio_pipeline.vhd:65]
 INFO: [Synth 8-256] done synthesizing module 'design_1_audio_pipeline_0_0' (5#1) [c:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_audio_pipeline_0_0/synth/design_1_audio_pipeline_0_0.vhd:92]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1550.629 ; gain = 185.062
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1695.418 ; gain = 184.672
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1568.539 ; gain = 202.973
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1713.344 ; gain = 202.598
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1568.539 ; gain = 202.973
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 1713.344 ; gain = 202.598
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1568.539 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1713.344 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1659.828 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1806.691 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1677.699 ; gain = 17.871
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1826.555 ; gain = 19.863
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1677.699 ; gain = 312.133
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1826.555 ; gain = 315.809
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
@@ -93,27 +92,25 @@ Start Loading Part and Timing Information
 Loading part: xck26-sfvc784-2LV-c
 INFO: [Synth 8-6742] Reading net delay rules and data
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1677.699 ; gain = 312.133
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1826.555 ; gain = 315.809
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1677.699 ; gain = 312.133
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1826.555 ; gain = 315.809
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'fifo_din_reg' [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:124]
-WARNING: [Synth 8-327] inferring latch for variable 'fifo_w_stb_reg' [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:121]
-WARNING: [Synth 8-327] inferring latch for variable 'data_buffer_reg' [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:119]
-WARNING: [Synth 8-327] inferring latch for variable 'bit_count_reg' [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:118]
+WARNING: [Synth 8-327] inferring latch for variable 'fifo_din_reg' [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:122]
+WARNING: [Synth 8-327] inferring latch for variable 'fifo_w_stb_reg' [C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:119]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 1677.699 ; gain = 312.133
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1826.555 ; gain = 315.809
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 1     
 	   2 Input   13 Bit       Adders := 2     
 	   2 Input   12 Bit       Adders := 1     
 	   2 Input    4 Bit       Adders := 1     
@@ -121,7 +118,7 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input      1 Bit         XORs := 1     
 +---Registers : 
-	               32 Bit    Registers := 7     
+	               32 Bit    Registers := 8     
 	               13 Bit    Registers := 2     
 	                5 Bit    Registers := 2     
 	                4 Bit    Registers := 1     
@@ -129,13 +126,13 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 10    
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 9     
+	   2 Input   32 Bit        Muxes := 7     
 	   8 Input   32 Bit        Muxes := 6     
-	   4 Input   32 Bit        Muxes := 2     
+	   4 Input   32 Bit        Muxes := 1     
 	   2 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 11    
-	   4 Input    1 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 10    
+	   4 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -152,25 +149,54 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1677.699 ; gain = 312.133
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1826.555 ; gain = 315.809
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++----------------------------+----------------------+-----------+----------------------+----------------+
+|Module Name                 | RTL Object           | Inference | Size (Depth x Width) | Primitives     | 
++----------------------------+----------------------+-----------+----------------------+----------------+
+|design_1_audio_pipeline_0_0 | U0/inst_fifo/mem_reg | Implied   | 4 K x 32             | RAM64M8 x 320  | 
++----------------------------+----------------------+-----------+----------------------+----------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 2200.766 ; gain = 835.199
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 2346.160 ; gain = 835.414
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 2201.137 ; gain = 835.570
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 2347.094 ; gain = 836.348
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++----------------------------+----------------------+-----------+----------------------+----------------+
+|Module Name                 | RTL Object           | Inference | Size (Depth x Width) | Primitives     | 
++----------------------------+----------------------+-----------+----------------------+----------------+
+|design_1_audio_pipeline_0_0 | U0/inst_fifo/mem_reg | Implied   | 4 K x 32             | RAM64M8 x 320  | 
++----------------------------+----------------------+-----------+----------------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 2220.246 ; gain = 854.680
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:42 . Memory (MB): peak = 2366.219 ; gain = 855.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -188,37 +214,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 2227.309 ; gain = 861.742
+Finished IO Insertion : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 2376.176 ; gain = 865.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 2227.309 ; gain = 861.742
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 2376.176 ; gain = 865.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 2227.309 ; gain = 861.742
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 2376.176 ; gain = 865.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 2227.309 ; gain = 861.742
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 2376.176 ; gain = 865.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 2227.309 ; gain = 861.742
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 2376.176 ; gain = 865.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 2227.309 ; gain = 861.742
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 2376.176 ; gain = 865.430
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -234,41 +260,43 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |CARRY8 |    10|
-|2     |LUT1   |     5|
-|3     |LUT2   |     4|
-|4     |LUT3   |     5|
-|5     |LUT4   |    15|
-|6     |LUT5   |    59|
-|7     |LUT6   |    71|
+|1     |CARRY8 |    12|
+|2     |LUT1   |     7|
+|3     |LUT2   |    40|
+|4     |LUT3   |     7|
+|5     |LUT4   |    10|
+|6     |LUT5   |    29|
+|7     |LUT6   |    85|
 |8     |FDCE   |    32|
-|9     |FDRE   |   255|
+|9     |FDRE   |   269|
 |10    |FDSE   |     4|
+|11    |LD     |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 2227.309 ; gain = 861.742
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 2376.176 ; gain = 865.430
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:27 . Memory (MB): peak = 2227.309 ; gain = 752.582
-Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:29 . Memory (MB): peak = 2227.309 ; gain = 861.742
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:41 . Memory (MB): peak = 2376.176 ; gain = 752.219
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 2376.176 ; gain = 865.430
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 2239.379 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2388.211 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2268.004 ; gain = 0.000
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 1 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2413.520 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 1 instances were transformed.
+  LD => LDCE (inverted pins: G): 1 instance 
 
-Synth Design complete, checksum: b139dbf1
+Synth Design complete, checksum: f40dd764
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 10 Warnings, 0 Critical Warnings and 0 Errors encountered.
+34 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 2268.004 ; gain = 1124.660
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:00:58 . Memory (MB): peak = 2413.520 ; gain = 1131.621
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1/design_1_audio_pipeline_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_audio_pipeline_0_0, cache-ID = f7e04c3037dce129
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_audio_pipeline_0_0, cache-ID = dd1e375d7d869f40
 INFO: [Coretcl 2-1174] Renamed 4 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1/design_1_audio_pipeline_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file design_1_audio_pipeline_0_0_utilization_synth.rpt -pb design_1_audio_pipeline_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Oct 11 11:16:57 2023...
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 12 15:13:09 2023...
