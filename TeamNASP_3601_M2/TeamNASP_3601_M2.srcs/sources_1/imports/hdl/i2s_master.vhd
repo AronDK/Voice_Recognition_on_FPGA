@@ -18,7 +18,8 @@ entity i2s_master is
     );
     port (
         clk             : in  std_logic;
-        clk_1            : in  std_logic;
+        clk_1           : in  std_logic;
+        --reset             : in  std_logic;
 
         -- I2S interface to MEMs mic
         i2s_lrcl        : out std_logic;    -- left/right clk (word sel): 0 = left, 1 = right
@@ -42,91 +43,91 @@ architecture Behavioral of i2s_master is
     
     signal bit_count: integer := 0;
     signal fsm_state: integer := 0; 
+    signal reset: std_logic  := '0';
     
 begin
-    -----------------------------------------------------------------------
-    -- hint: write code for bclk clock generator:
-    -----------------------------------------------------------------------
-    --implementation...:
-    process(clk_1, bclk)
+
+    process(clk_1, reset)  -- bclk clock generator with reset
     begin
-        if falling_edge (clk_1) then 
+        if reset = '1' then
+            bclk <= '0';
+            bclk_counter <= "0000";
+            bit_count <= 0;
+        elsif falling_edge(clk_1) then
             case bclk_counter is
                 when "1011" =>
-                    bclk <= not(bclk);
+                    bclk <= not bclk;
                     bclk_counter <= "0000";
                     bit_count <= bit_count + 1;
-              when others =>
+                when others =>
                     bclk_counter <= bclk_counter + 1;
             end case;
             if read_idle = '1' then
                 bit_count <= 0;
             end if;
-       end if;
+        end if;
         i2s_bclk <= bclk;
     end process;
-    ------------------------------------------------------------------------
-    -- hint: write code for lrcl/ws clock generator:
-    ------------------------------------------------------------------------
-    --implementation...:
-    process(bclk, word)
+
+    process(bclk, reset)  -- lrcl/ws clock generator with reset
     begin 
-        if falling_edge (bclk) then
+        if reset = '1' then
+            word <= '1';
+            ws_counter <= "000";
+        elsif falling_edge(bclk) then
             case ws_counter is
                 when "100" =>
-                    word <= not(word);
+                    word <= not word;
                     ws_counter <= "000";
                 when others =>
-                    ws_counter  <= ws_counter + 1;
+                    ws_counter <= ws_counter + 1;
             end case;
         end if;
-        i2s_lrcl  <= word;
-    end process;      
-    ------------------------------------------------------------------------
-    -- hint: write code for I2S FSM
-    ------------------------------------------------------------------------
-    --implementation...:
-    process(word, bit_count)
-    begin
-       if falling_edge(word) then
-                read_idle <= '1';
-                fsm_state <= 1;
-            end if;
-            
-       if bit_count = PCM_PRECISION then -- 18-bit data stream capture
-                fsm_state <= 2;
-            end if;
-            
-       if rising_edge(word) then
-                fsm_state <= 0;
-                read_idle <= '0';
-            end if;
-    
+        i2s_lrcl <= word;
     end process;
-    --------------------------------------------------
-    -- hint: write code for FIFO data handshake
-    --------------------------------------------------
-    -- hint: Useful link: https://encyclopedia2.thefreedictionary.com/Hand+shake+signal
-    --implementation...:
-    
 
-    -- I2S FSM and FIFO Data Handshake
-    process(fsm_state, bit_count)
+    process(word, reset)  -- I2S FSM reset logic
     begin
-        case fsm_state is
-            when 0 =>  -- Idle
-                if read_idle = '0' then
-                    fifo_w_stb <= '0';
-                end if;
-            when 1 =>  -- 18-bit data stream capture
-                fifo_din(bit_count) <= i2s_dout;        -- Flush Buffer after finished        
-            when 2 =>  -- Send bits to FIFO bus
-                if fifo_full = '0' then
-                    fifo_w_stb <= '1';
-                end if;
-            when others => -- do nothing
-                -- read_idle <= '1';
-        end case;
+        if reset = '1' then
+            read_idle <= '1';
+            fsm_state <= 0;
+        elsif falling_edge(word) then
+            read_idle <= '1';
+            fsm_state <= 1;
+        end if;
+
+        if bit_count = PCM_PRECISION then
+            fsm_state <= 2;
+        end if;
+
+        if rising_edge(word) then
+            fsm_state <= 0;
+            read_idle <= '0';
+        end if;
+    end process;
+
+    -- I2S FSM and FIFO Data Handshake with reset
+    process(fsm_state, reset)
+    begin
+        if reset = '1' then
+            fifo_w_stb <= '0';
+            fifo_din <= (others => '0');
+        else
+            case fsm_state is
+                when 0 =>  -- Idle
+                    if read_idle = '0' then
+                        fifo_w_stb <= '0';
+                    end if;
+                when 1 =>  -- 18-bit data stream capture
+                    fifo_din(bit_count) <= i2s_dout;        
+                when 2 =>  -- Send bits to FIFO bus
+                    if fifo_full = '0' then
+                        fifo_w_stb <= '1';
+                    end if;
+                when others => -- do nothing
+                    -- read_idle <= '1';
+            end case;
+        end if;
     end process;
 
 end Behavioral;

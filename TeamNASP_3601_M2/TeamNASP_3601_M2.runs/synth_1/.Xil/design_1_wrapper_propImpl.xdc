@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/constrs_1/imports/COMP3601-Project/kria-constraints.xdc rfile:../../../TeamNASP_3601_M2.srcs/constrs_1/imports/COMP3601-Project/kria-constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:D:/Sagar/UNSW/study/comp3601/Project/git/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/constrs_1/imports/COMP3601-Project/kria-constraints.xdc rfile:../../../TeamNASP_3601_M2.srcs/constrs_1/imports/COMP3601-Project/kria-constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:13 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN H12 [get_ports pmod_i2s2_lrclk] ;# PMOD pin 1 - som240_1_a17
 set_property src_info {type:XDC file:1 line:14 export:INPUT save:INPUT read:READ} [current_design]
