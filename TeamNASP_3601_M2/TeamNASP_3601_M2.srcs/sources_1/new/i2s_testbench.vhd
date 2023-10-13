@@ -31,7 +31,7 @@ architecture sim of i2s_testbench is
     signal datastream : std_logic_vector (31 downto 0) := "00011010010101001011010101101100";
     signal counter: unsigned (4 downto 0) := "0000";
     
-    constant CLOCK_PERIOD : time := 10 ns;
+    constant CLOCK_PERIOD : time := 20 ns;
     constant BCLK_PERIOD : time := 190 ns;
     
     component i2s_master
