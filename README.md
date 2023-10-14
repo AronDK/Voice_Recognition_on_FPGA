@@ -7,7 +7,7 @@ COMP3601 FPGA Project
 - Sagar Bhatnagar (z5364817)
 - Nishant Patil (z5270429)
 
-# Xilinx Version
+**Xilinx Version**
 Vitis Vivado 2021.1
 
 
