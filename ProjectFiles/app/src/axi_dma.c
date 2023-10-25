@@ -30,6 +30,10 @@
 #include <fcntl.h>
 #include <sys/mman.h>
 
+
+static DECLARE_WAIT_QUEUE_HEAD(dma_wait_queue);
+static volatile int dma_transfer_complete = 0;
+
 /*
  * AXI DMA general function
  */
@@ -73,18 +77,49 @@ void axi_dma_release(axi_dma_t *device) {
     munmap(device->v_dst_addr, device->size);
 }
 
-void axi_dma_s2mm_transfer(axi_dma_t *device, uint32_t size) {
+// void axi_dma_s2mm_transfer(axi_dma_t *device, uint32_t size) {
+//     // Clearup
+//     dma_s2mm_reset(device);
+//     dma_s2mm_stop(device);
+
+//     // Config and start
+//     dma_s2mm_set_dst_addr(device, device->p_dst_addr);
+//     _reg_set(device->v_baseaddr, AXI_DMA_S2MM_CR, 0xf001);
+//     _reg_set(device->v_baseaddr, AXI_DMA_S2MM_LENGTH, size);
+    
+//     dma_s2mm_busy_wait(device);
+// }
+
+void axi_dma_s2mm_transfer(axi_dma_t *device, uint32_t size)
+{
+    int ret;
+
+    ret = request_irq(IRQ_NUMBER, dma_irq_handler, 0, "axi_dma_irq", device);
+    if (ret) {
+        printk(KERN_ERR "Unable to request IRQ: %d\n", ret);
+        return;
+    }
+
     // Clearup
     dma_s2mm_reset(device);
     dma_s2mm_stop(device);
 
     // Config and start
     dma_s2mm_set_dst_addr(device, device->p_dst_addr);
+    dma_s2mm_IOC_IRQ_EN(device);  // Enable interrupts on completion
     _reg_set(device->v_baseaddr, AXI_DMA_S2MM_CR, 0xf001);
     _reg_set(device->v_baseaddr, AXI_DMA_S2MM_LENGTH, size);
-    
-    dma_s2mm_busy_wait(device);
+
+    // Wait for the interrupt handler to signal that the transfer is complete
+    wait_event_interruptible(dma_wait_queue, dma_transfer_complete);
+
+    dma_transfer_complete = 0;
+
+    free_irq(IRQ_NUMBER, device);
 }
+
+
+
 
 void dma_s2mm_busy_wait(axi_dma_t *device) {
     volatile uint32_t s2mm_sr = _reg_get(device->v_baseaddr, AXI_DMA_S2MM_SR);
