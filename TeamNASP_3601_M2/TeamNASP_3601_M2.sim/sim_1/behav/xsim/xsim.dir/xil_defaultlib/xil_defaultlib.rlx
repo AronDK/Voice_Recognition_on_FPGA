@@ -2,7 +2,7 @@
 2020.2
 Jun 10 2021
 20:04:57
-C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v,1698212079,verilog,,,,glbl,,axi_vip_v1_1_10;smartconnect_v1_0;xilinx_vip;zynq_ultra_ps_e_vip_v1_0_10,,,,,,
+C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v,1623370582,verilog,,,,glbl,,axi_vip_v1_1_10;smartconnect_v1_0;xilinx_vip;zynq_ultra_ps_e_vip_v1_0_10,,,,,,
 C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd,1698212343,vhdl,,,,i2s_master_tb,,,,,,,,
-C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd,1698212258,vhdl,,,,fifo_handshake;i2s_master,,,,,,,,
+C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd,1698240806,vhdl,,,,i2s_master,,,,,,,,
 C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd,1698212089,vhdl,C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd;C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd,,,aud_param,,,,,,,,

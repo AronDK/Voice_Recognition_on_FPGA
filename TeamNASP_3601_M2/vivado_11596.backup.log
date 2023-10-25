@@ -1,0 +1,1713 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Wed Oct 25 21:25:02 2023
+# Process ID: 11596
+# Current directory: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25924 C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.xpr
+# Log file: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/vivado.log
+# Journal file: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 1282.953 ; gain = 0.000
+update_compile_order -fileset sources_1
+update_module_reference design_1_audio_pipeline_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-8018] Clock interface clk has no prefix in its name to identify associated interfaces. The interfaces might be inferred incorrectly. It is advised to review ASSOCIATED_BUSIF value for this interface.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 's00_axi_aclk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Reading block design file <C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/bd/design_1/design_1.bd>...
+Adding component instance block -- xilinx.com:ip:zynq_ultra_ps_e:3.3 - zynq_ultra_ps_e_0
+Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps8_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_ds
+Adding component instance block -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps8_0_99M
+Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- xilinx.com:module_ref:audio_pipeline:1.0 - audio_pipeline_0
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_DDR_HIGH from address space /axi_dma_0/Data_S2MM.
+Excluding slave segment /zynq_ultra_ps_e_0/SAXIGP0/HPC0_LPS_OCM from address space /axi_dma_0/Data_S2MM.
+Successfully read diagram <design_1> from block design file <C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/bd/design_1/design_1.bd>
+Upgrading 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/bd/design_1/design_1.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1
+
+INFO: [IP_Flow 19-1972] Upgraded design_1_audio_pipeline_0_0 from audio_pipeline_v1_0 1.0 to audio_pipeline_v1_0 1.0
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+upgrade_ip: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1683.594 ; gain = 400.641
+update_module_reference: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1683.594 ; gain = 400.641
+update_module_reference design_1_audio_pipeline_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-8018] Clock interface clk has no prefix in its name to identify associated interfaces. The interfaces might be inferred incorrectly. It is advised to review ASSOCIATED_BUSIF value for this interface.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 's00_axi_aclk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_audio_pipeline_0_0 from audio_pipeline_v1_0 1.0 to audio_pipeline_v1_0 1.0
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+update_module_reference design_1_audio_pipeline_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-8018] Clock interface clk has no prefix in its name to identify associated interfaces. The interfaces might be inferred incorrectly. It is advised to review ASSOCIATED_BUSIF value for this interface.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 's00_axi_aclk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_audio_pipeline_0_0 from audio_pipeline_v1_0 1.0 to audio_pipeline_v1_0 1.0
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+"xvhdl --incr --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2s_master_tb_behav -key {Behavioral:sim_1:Functional:i2s_master_tb} -tclbatch {i2s_master_tb.tcl} -protoinst "protoinst_files/bd_afc3.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+Time resolution is 1 ps
+source i2s_master_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2s_master_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 1730.551 ; gain = 0.000
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/i2s_master_tb/UUT}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1
+
+launch_runs synth_1 -jobs 8
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in High-performance Mode.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc/M00_AXI(0)
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+Exporting to file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Block Design Tcl file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0_bd.tcl
+Generated Hardware Definition File c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block audio_pipeline_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_ds .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_ds_0, cache-ID = 6cfbcb5f69238a27; cache size = 40.637 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 70dc2fbf8bbefb60; cache size = 40.637 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = f439565c6a42ba1e; cache size = 40.637 MB.
+[Wed Oct 25 22:14:22 2023] Launched design_1_audio_pipeline_0_0_synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1/runme.log
+[Wed Oct 25 22:14:22 2023] Launched synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 2980.203 ; gain = 0.000
+set_property INCREMENTAL false [get_filesets sim_1]
+reset_run design_1_audio_pipeline_0_0_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1
+
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1
+
+launch_runs synth_1 -jobs 8
+[Wed Oct 25 22:16:08 2023] Launched design_1_audio_pipeline_0_0_synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1/runme.log
+[Wed Oct 25 22:16:08 2023] Launched synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+WARNING: [Vivado 12-3661] Failed to remove file:C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/i2s_master_tb_behav.wdb
+WARNING: [Vivado 12-3661] Failed to remove file:C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/simulate.log
+WARNING: [Vivado 12-3661] Failed to remove file:C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/xelab.pb
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/xsim.dir/i2s_master_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Oct 25 22:16:37 2023...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2980.203 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2s_master_tb_behav -key {Behavioral:sim_1:Functional:i2s_master_tb} -tclbatch {i2s_master_tb.tcl} -protoinst "protoinst_files/bd_afc3.protoinst" -protoinst "protoinst_files/design_1.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/design_1.protoinst for the following reason(s):
+There are no instances of module "design_1" in the design.
+
+Time resolution is 1 ps
+source i2s_master_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2s_master_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:15 . Memory (MB): peak = 2980.203 ; gain = 0.000
+current_wave_config {Untitled 2}
+Untitled 2
+add_wave {{/i2s_master_tb/UUT}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+reset_run design_1_audio_pipeline_0_0_synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1
+
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1
+
+update_module_reference design_1_audio_pipeline_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-8018] Clock interface clk has no prefix in its name to identify associated interfaces. The interfaces might be inferred incorrectly. It is advised to review ASSOCIATED_BUSIF value for this interface.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 's00_axi_aclk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_audio_pipeline_0_0 from audio_pipeline_v1_0 1.0 to audio_pipeline_v1_0 1.0
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+launch_runs synth_1 -jobs 8
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in High-performance Mode.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc/M00_AXI(0)
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+Exporting to file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Block Design Tcl file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0_bd.tcl
+Generated Hardware Definition File c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block audio_pipeline_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_ds .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_ds_0, cache-ID = 6cfbcb5f69238a27; cache size = 40.637 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 70dc2fbf8bbefb60; cache size = 40.637 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = f439565c6a42ba1e; cache size = 40.637 MB.
+[Wed Oct 25 22:20:53 2023] Launched design_1_audio_pipeline_0_0_synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1/runme.log
+[Wed Oct 25 22:20:53 2023] Launched synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:24 . Memory (MB): peak = 2980.203 ; gain = 0.000
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:91]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:94]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:96]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "if". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:122]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:91]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:94]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:96]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "if". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:122]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:91]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:94]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:96]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "if". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:122]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:91]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:94]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:96]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "if". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:122]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:94]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "begin". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:106]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:121]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:94]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "begin". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:106]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:121]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:94]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "begin". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:106]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:121]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:94]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "begin". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:106]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:121]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "when". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:93]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:95]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "begin". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:107]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:122]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "when". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:93]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:95]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "begin". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:107]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:122]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "when". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:93]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:95]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "begin". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:107]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:122]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "when". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:93]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:95]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "begin". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:107]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:122]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:96]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:123]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:96]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:123]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:96]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:123]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:96]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:99]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:123]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:97]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:102]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:124]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:97]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:102]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:124]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:97]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:102]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:124]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:97]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:102]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:124]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:98]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:103]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:125]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:98]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:103]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:125]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:98]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:103]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:125]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:98]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:103]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:125]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:105]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "begin". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:112]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:104]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:104]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:104]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:104]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:104]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "then". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:101]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "elsif". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:104]
+update_module_reference design_1_audio_pipeline_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-8018] Clock interface clk has no prefix in its name to identify associated interfaces. The interfaces might be inferred incorrectly. It is advised to review ASSOCIATED_BUSIF value for this interface.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 's00_axi_aclk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/bd/design_1/design_1.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1
+
+INFO: [IP_Flow 19-1972] Upgraded design_1_audio_pipeline_0_0 from audio_pipeline_v1_0 1.0 to audio_pipeline_v1_0 1.0
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 2980.203 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/xsim.dir/i2s_master_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Oct 25 22:36:56 2023...
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2s_master_tb_behav -key {Behavioral:sim_1:Functional:i2s_master_tb} -tclbatch {i2s_master_tb.tcl} -protoinst "protoinst_files/bd_afc3.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+Time resolution is 1 ps
+source i2s_master_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2s_master_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:15 . Memory (MB): peak = 2980.203 ; gain = 0.000
+current_wave_config {Untitled 3}
+Untitled 3
+add_wave {{/i2s_master_tb/UUT}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:97]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:97]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "when". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:124]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "when". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:100]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "process". [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:124]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2980.203 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/xsim.dir/i2s_master_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Oct 25 23:02:49 2023...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2s_master_tb_behav -key {Behavioral:sim_1:Functional:i2s_master_tb} -tclbatch {i2s_master_tb.tcl} -protoinst "protoinst_files/bd_afc3.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+Time resolution is 1 ps
+source i2s_master_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2s_master_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 2980.203 ; gain = 0.000
+current_wave_config {Untitled 4}
+Untitled 4
+add_wave {{/i2s_master_tb/UUT}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2980.203 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/xsim.dir/i2s_master_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Wed Oct 25 23:14:02 2023...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2s_master_tb_behav -key {Behavioral:sim_1:Functional:i2s_master_tb} -tclbatch {i2s_master_tb.tcl} -protoinst "protoinst_files/bd_afc3.protoinst" -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+Time resolution is 1 ps
+source i2s_master_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2s_master_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 2980.203 ; gain = 0.000
+current_wave_config {Untitled 5}
+Untitled 5
+add_wave {{/i2s_master_tb/UUT}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 2980.203 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 2980.203 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+ERROR: Index 32 out of bound 31 downto 0
+Time: 14960 ns  Iteration: 2  Process: /i2s_master_tb/UUT/line__109
+  File: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd
+
+HDL Line: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:113
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 2980.203 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+ERROR: Index -1 out of bound 31 downto 0
+Time: 7590 ns  Iteration: 2  Process: /i2s_master_tb/UUT/line__109
+  File: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd
+
+HDL Line: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:113
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 2980.203 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+ERROR: Index 32 out of bound 31 downto 0
+Time: 7590 ns  Iteration: 2  Process: /i2s_master_tb/UUT/line__109
+  File: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd
+
+HDL Line: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd:113
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 2980.203 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1
+
+update_module_reference design_1_audio_pipeline_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-8018] Clock interface clk has no prefix in its name to identify associated interfaces. The interfaces might be inferred incorrectly. It is advised to review ASSOCIATED_BUSIF value for this interface.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 's00_axi_aclk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-1972] Upgraded design_1_audio_pipeline_0_0 from audio_pipeline_v1_0 1.0 to audio_pipeline_v1_0 1.0
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+launch_runs synth_1 -jobs 8
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in High-performance Mode.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc/M00_AXI(0)
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+Exporting to file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Block Design Tcl file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0_bd.tcl
+Generated Hardware Definition File c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block audio_pipeline_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_ds .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_ds_0, cache-ID = 6cfbcb5f69238a27; cache size = 40.637 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 70dc2fbf8bbefb60; cache size = 40.637 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = f439565c6a42ba1e; cache size = 40.637 MB.
+[Thu Oct 26 00:04:28 2023] Launched design_1_audio_pipeline_0_0_synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1/runme.log
+[Thu Oct 26 00:04:28 2023] Launched synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:09 ; elapsed = 00:00:27 . Memory (MB): peak = 3415.305 ; gain = 0.000
+launch_runs impl_1 -jobs 8
+[Thu Oct 26 00:07:29 2023] Launched impl_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/runme.log
+save_wave_config {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg
+set_property xsim.view C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/xsim.dir/i2s_master_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Oct 26 00:10:26 2023...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 3415.305 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2s_master_tb_behav -key {Behavioral:sim_1:Functional:i2s_master_tb} -tclbatch {i2s_master_tb.tcl} -protoinst "protoinst_files/bd_afc3.protoinst" -protoinst "protoinst_files/design_1.protoinst" -view {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/design_1.protoinst for the following reason(s):
+There are no instances of module "design_1" in the design.
+
+Time resolution is 1 ps
+open_wave_config C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg
+source i2s_master_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2s_master_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:13 . Memory (MB): peak = 3415.305 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/xsim.dir/i2s_master_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Oct 26 00:11:31 2023...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2s_master_tb_behav -key {Behavioral:sim_1:Functional:i2s_master_tb} -tclbatch {i2s_master_tb.tcl} -protoinst "protoinst_files/bd_afc3.protoinst" -protoinst "protoinst_files/design_1.protoinst" -view {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/design_1.protoinst for the following reason(s):
+There are no instances of module "design_1" in the design.
+
+Time resolution is 1 ps
+open_wave_config C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg
+source i2s_master_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2s_master_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 3415.305 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+save_wave_config {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg}
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/design_1.protoinst for the following reason(s):
+There are no instances of module "design_1" in the design.
+
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 3446.758 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 31250 ns
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1
+
+update_module_reference design_1_audio_pipeline_0_0
+INFO: [IP_Flow 19-5107] Inferred bus interface 'axis' of definition 'xilinx.com:interface:axis:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi' of definition 'xilinx.com:interface:aximm:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'rst' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aresetn' of definition 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 's00_axi_aclk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aresetn': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-8018] Clock interface clk has no prefix in its name to identify associated interfaces. The interfaces might be inferred incorrectly. It is advised to review ASSOCIATED_BUSIF value for this interface.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_BUSIF' with value 'axis'.
+INFO: [IP_Flow 19-4728] Bus Interface 'clk': Added interface parameter 'ASSOCIATED_RESET' with value 'rst'.
+INFO: [IP_Flow 19-4728] Bus Interface 's00_axi_aclk': Added interface parameter 'ASSOCIATED_RESET' with value 's00_axi_aresetn'.
+WARNING: [IP_Flow 19-5661] Bus Interface 's00_axi_aclk' does not have any bus interfaces associated with it.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+Upgrading 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/bd/design_1/design_1.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1
+
+INFO: [IP_Flow 19-1972] Upgraded design_1_audio_pipeline_0_0 from audio_pipeline_v1_0 1.0 to audio_pipeline_v1_0 1.0
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+launch_runs synth_1 -jobs 8
+INFO: [xilinx.com:ip:smartconnect:1.0-1] design_1_axi_smc_0: SmartConnect design_1_axi_smc_0 is in High-performance Mode.
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [xilinx.com:ip:clk_wiz:6.0-1] /clk_wiz_0 clk_wiz propagate
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /ps8_0_axi_periph/s00_couplers/auto_ds/S_AXI(0) and /zynq_ultra_ps_e_0/M_AXI_HPM0_FPD(16)
+WARNING: [BD 41-237] Bus Interface property AWUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc/M00_AXI(0)
+WARNING: [BD 41-237] Bus Interface property ARUSER_WIDTH does not match between /zynq_ultra_ps_e_0/S_AXI_HPC0_FPD(1) and /axi_smc/M00_AXI(0)
+Wrote  : <C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.srcs\sources_1\bd\design_1\design_1.bd> 
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/synth/design_1.vhd
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/sim/design_1.vhd
+VHDL Output written to : c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
+Exporting to file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0.hwh
+Generated Block Design Tcl file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/hw_handoff/design_1_axi_smc_0_bd.tcl
+Generated Hardware Definition File c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_axi_smc_0/bd_0/synth/design_1_axi_smc_0.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block audio_pipeline_0 .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_auto_ds_0/design_1_auto_ds_0_ooc.xdc'
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_ds .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block ps8_0_axi_periph/s00_couplers/auto_pc .
+Exporting to file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hw_handoff/design_1.hwh
+Generated Block Design Tcl file c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
+Generated Hardware Definition File c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/synth/design_1.hwdef
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_ds_0, cache-ID = 6cfbcb5f69238a27; cache size = 40.637 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_auto_pc_0, cache-ID = 70dc2fbf8bbefb60; cache size = 40.637 MB.
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP design_1_axi_smc_0, cache-ID = f439565c6a42ba1e; cache size = 40.637 MB.
+[Thu Oct 26 00:27:06 2023] Launched design_1_audio_pipeline_0_0_synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/design_1_audio_pipeline_0_0_synth_1/runme.log
+[Thu Oct 26 00:27:06 2023] Launched synth_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:10 ; elapsed = 00:00:27 . Memory (MB): peak = 3446.758 ; gain = 0.000
+launch_runs impl_1 -jobs 8
+[Thu Oct 26 00:30:04 2023] Launched impl_1...
+Run output will be captured here: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/runme.log
+close_sim
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Simtcl 6-16] Simulation closed
+INFO: [Common 17-344] 'close_sim' was cancelled
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'i2s_master_tb'
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Runs 36-567] Checking/generating simulation output products for IPs/BDs (if any)...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2021.1/tps/boost_1_72_0'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2021.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'i2s_master_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/sc_xtlm_design_1_axi_smc_0.mem'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xvlog --relax -L axi_vip_v1_1_10 -L smartconnect_v1_0 -L zynq_ultra_ps_e_vip_v1_0_10 -L xilinx_vip -prj i2s_master_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --relax -prj i2s_master_tb_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/params.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sources_1/imports/hdl/i2s_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.srcs/sim_1/new/i2s_master_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'i2s_master_tb'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+"xelab -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 5fa353a2548a439dbdc429cac6c24b13 --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot i2s_master_tb_behav xil_defaultlib.i2s_master_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.math_real
+Compiling package xil_defaultlib.aud_param
+Compiling module xil_defaultlib.glbl
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master [i2s_master_default]
+Compiling architecture behavioral of entity xil_defaultlib.i2s_master_tb
+Built simulation snapshot i2s_master_tb_behav
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim/xsim.dir/i2s_master_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Thu Oct 26 00:32:51 2023...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 3446.758 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "i2s_master_tb_behav -key {Behavioral:sim_1:Functional:i2s_master_tb} -tclbatch {i2s_master_tb.tcl} -protoinst "protoinst_files/bd_afc3.protoinst" -protoinst "protoinst_files/design_1.protoinst" -view {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/bd_afc3.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/bd_afc3.protoinst for the following reason(s):
+There are no instances of module "bd_afc3" in the design.
+
+INFO: [Wavedata 42-565] Reading protoinst file protoinst_files/design_1.protoinst
+WARNING: [Wavedata 42-558] Couldn't load one or more protocol instances from protoinst file protoinst_files/design_1.protoinst for the following reason(s):
+There are no instances of module "design_1" in the design.
+
+Time resolution is 1 ps
+open_wave_config C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg
+source i2s_master_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'i2s_master_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:16 . Memory (MB): peak = 3446.758 ; gain = 0.000
+relaunch_sim
+ERROR: [Vivado 12-106] *** Exception: ui.utils.e: ui.frmwork.cmd.CommandFailedException: Unknown exception occurred ui.frmwork.cmd.CommandFailedException: Unknown exception occurred
+	at ui.views.simulator.executive.simulationi.SimulationExecutive_getCallStacksData(Native Method)
+	at ui.views.N.c.a.krZ(SourceFile:1303)
+	at ui.views.N.a.z.reset(SourceFile:395)
+	at ui.views.N.a.y.reset(SourceFile:274)
+	at ui.views.N.a.w.reset(SourceFile:67)
+	at ui.views.N.a.B.reset(SourceFile:124)
+	at ui.views.N.a.B.handleTclEvent(SourceFile:114)
+	at ui.frmwork.a.o.c(SourceFile:42)
+	at ui.frmwork.E.i(SourceFile:216)
+	at ui.frmwork.E.fireTclEvent(SourceFile:139)
+	at ui.views.simulator.executive.simulationi.SimulationExecutive_setTreeWindowTreeHeight(Native Method)
+	at ui.views.N.c.a.b(SourceFile:675)
+	at ui.views.N.i.e.ksp(SourceFile:122)
+	at ui.views.N.i.h.componentResized(SourceFile:145)
+	at java.desktop/java.awt.Component.processComponentEvent(Component.java:6458)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6412)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at ui.frmwork.a.d.dispatchEvent(SourceFile:92)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:117)
+	at java.desktop/java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.desktop/java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.desktop/java.awt.Dialog.show(Dialog.java:1070)
+	at java.desktop/java.awt.Component.show(Component.java:1716)
+	at java.desktop/java.awt.Component.setVisible(Component.java:1663)
+	at java.desktop/java.awt.Window.setVisible(Window.java:1031)
+	at java.desktop/java.awt.Dialog.setVisible(Dialog.java:1005)
+	at ui.dlg.c.g.setVisible(SourceFile:872)
+	at ui.dlg.c.bz.bIK(SourceFile:610)
+	at ui.dlg.c.bH.actionPerformed(SourceFile:1190)
+	at ui.dlg.c.bz.fBW(SourceFile:710)
+	at ui.views.c.t.b.a.run(SourceFile:81)
+	at ui.frmwork.cmd.a.hFd(SourceFile:141)
+	at ui.frmwork.cmd.d.hFl(SourceFile:66)
+	at ui.bm.actionPerformed(SourceFile:491)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at ui.utils.swing.b.E.fireActionPerformed(SourceFile:243)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at com.jidesoft.plaf.basic.BasicJideButtonListener.mouseReleased(Unknown Source)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:297)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:297)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:297)
+	at java.desktop/java.awt.AWTEventMulticaster.mouseReleased(AWTEventMulticaster.java:297)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at ui.frmwork.a.d.dispatchEvent(SourceFile:92)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+ (See C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/vivado_pid11596.debug)

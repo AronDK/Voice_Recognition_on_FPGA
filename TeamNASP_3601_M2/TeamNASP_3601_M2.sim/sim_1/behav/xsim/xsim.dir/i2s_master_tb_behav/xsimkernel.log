@@ -1,4 +1,4 @@
-Running: xsim.dir/i2s_master_tb_behav/xsimk.exe -simmode gui -wdb i2s_master_tb_behav.wdb -simrunnum 0 -socket 59093
+Running: xsim.dir/i2s_master_tb_behav/xsimk.exe -simmode gui -wdb i2s_master_tb_behav.wdb -simrunnum 0 -socket 57325
 Design successfully loaded
-Design Loading Memory Usage: 8092 KB (Peak: 8092 KB)
+Design Loading Memory Usage: 7540 KB (Peak: 7540 KB)
 Design Loading CPU Usage: 0 ms

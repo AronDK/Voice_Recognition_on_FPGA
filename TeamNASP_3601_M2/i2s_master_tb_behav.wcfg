@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="i2s_master_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="aud_param" />
+            <top_module name="glbl" />
+            <top_module name="i2s_master_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="7,890.937 ns"></ZoomStartTime>
+      <ZoomEndTime time="9,093.938 ns"></ZoomEndTime>
+      <Cursor1Time time="15,092.687 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="286"></NameColumnWidth>
+      <ValueColumnWidth column_width="116"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/i2s_master_tb/i2s_dout" type="logic">
+      <obj_property name="ElementShortName">i2s_dout</obj_property>
+      <obj_property name="ObjectShortName">i2s_dout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/clk_1" type="logic">
+      <obj_property name="ElementShortName">clk_1</obj_property>
+      <obj_property name="ObjectShortName">clk_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/fifo_full" type="logic">
+      <obj_property name="ElementShortName">fifo_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/clk_counter" type="array">
+      <obj_property name="ElementShortName">clk_counter[5:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_counter[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/CLK_PERIOD" type="other">
+      <obj_property name="ElementShortName">CLK_PERIOD</obj_property>
+      <obj_property name="ObjectShortName">CLK_PERIOD</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/clk_1" type="logic">
+      <obj_property name="ElementShortName">clk_1</obj_property>
+      <obj_property name="ObjectShortName">clk_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/i2s_lrcl" type="logic">
+      <obj_property name="ElementShortName">i2s_lrcl</obj_property>
+      <obj_property name="ObjectShortName">i2s_lrcl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/i2s_dout" type="logic">
+      <obj_property name="ElementShortName">i2s_dout</obj_property>
+      <obj_property name="ObjectShortName">i2s_dout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/i2s_bclk" type="logic">
+      <obj_property name="ElementShortName">i2s_bclk</obj_property>
+      <obj_property name="ObjectShortName">i2s_bclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/fifo_din" type="array">
+      <obj_property name="ElementShortName">fifo_din[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fifo_din[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/fifo_w_stb" type="logic">
+      <obj_property name="ElementShortName">fifo_w_stb</obj_property>
+      <obj_property name="ObjectShortName">fifo_w_stb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/fifo_full" type="logic">
+      <obj_property name="ElementShortName">fifo_full</obj_property>
+      <obj_property name="ObjectShortName">fifo_full</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/bclk" type="logic">
+      <obj_property name="ElementShortName">bclk</obj_property>
+      <obj_property name="ObjectShortName">bclk</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/prev_bclk" type="logic">
+      <obj_property name="ElementShortName">prev_bclk</obj_property>
+      <obj_property name="ObjectShortName">prev_bclk</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/bclk_counter" type="array">
+      <obj_property name="ElementShortName">bclk_counter[4:0]</obj_property>
+      <obj_property name="ObjectShortName">bclk_counter[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FAAFBE</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/strobe_reset" type="logic">
+      <obj_property name="ElementShortName">strobe_reset</obj_property>
+      <obj_property name="ObjectShortName">strobe_reset</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/word" type="logic">
+      <obj_property name="ElementShortName">word</obj_property>
+      <obj_property name="ObjectShortName">word</obj_property>
+      <obj_property name="CustomSignalColor">#FF0080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/prev_word" type="logic">
+      <obj_property name="ElementShortName">prev_word</obj_property>
+      <obj_property name="ObjectShortName">prev_word</obj_property>
+      <obj_property name="CustomSignalColor">#FF0080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/ws_counter" type="array">
+      <obj_property name="ElementShortName">ws_counter[5:0]</obj_property>
+      <obj_property name="ObjectShortName">ws_counter[5:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF0080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/readable" type="other">
+      <obj_property name="ElementShortName">readable</obj_property>
+      <obj_property name="ObjectShortName">readable</obj_property>
+      <obj_property name="CustomSignalColor">#800000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/bit_count" type="other">
+      <obj_property name="ElementShortName">bit_count</obj_property>
+      <obj_property name="ObjectShortName">bit_count</obj_property>
+      <obj_property name="CustomSignalColor">#800080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/fsm_state" type="other">
+      <obj_property name="ElementShortName">fsm_state</obj_property>
+      <obj_property name="ObjectShortName">fsm_state</obj_property>
+      <obj_property name="CustomSignalColor">#FFFFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/DATA_WIDTH" type="other">
+      <obj_property name="ElementShortName">DATA_WIDTH</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/i2s_master_tb/UUT/PCM_PRECISION" type="other">
+      <obj_property name="ElementShortName">PCM_PRECISION</obj_property>
+      <obj_property name="ObjectShortName">PCM_PRECISION</obj_property>
+      <obj_property name="CustomSignalColor">#808080</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+</wave_config>

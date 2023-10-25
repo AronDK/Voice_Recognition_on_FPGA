@@ -36,4 +36,4 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_au
 # IP: bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_auto_pc_0 || ORIG_REF_NAME==design_1_auto_pc_0} -quiet] -quiet
 
-# XDC: c:/Users/gonin/Documents/COMP3601/COMP3601-Project/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/design_1_ooc.xdc
+# XDC: c:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.gen/sources_1/bd/design_1/design_1_ooc.xdc
