@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include <stdint.h>
+#include <stdlib.h>
 #include <math.h>
-#include <string.h>
+#include <stdint.h>
 
-typedef struct WavHeader {
+typedef struct {
     char chunkID[4];           // "RIFF"
     uint32_t chunkSize;        // Size of the entire file minus 8 bytes
     char format[4];            // "WAVE"
@@ -17,72 +17,68 @@ typedef struct WavHeader {
     uint16_t bitsPerSample;    // Number of bits per sample
     char subchunk2ID[4];       // "data"
     uint32_t subchunk2Size;    // Number of bytes in data
-} __attribute__((packed)) WavHeader;
+} WavHeader;
 
-void writeWavHeader(FILE *wavFile, int sampleRate, int numSamples, int bitsPerSample, int numChannels) {
-    WavHeader header;
+void createWavHeader(WavHeader *header, int sampleRate, int bitsPerSample, int numChannels, int numSamples) {
+    // RIFF chunk
+    header->chunkID[0] = 'R';
+    header->chunkID[1] = 'I';
+    header->chunkID[2] = 'F';
+    header->chunkID[3] = 'F';
+    header->chunkSize = 36 + numSamples * numChannels * (bitsPerSample / 8);
+    header->format[0] = 'W';
+    header->format[1] = 'A';
+    header->format[2] = 'V';
+    header->format[3] = 'E';
 
-    // RIFF header
-    strncpy(header.chunkID, "RIFF", 4);
-    header.chunkSize = 36 + numSamples * numChannels * (bitsPerSample / 8);
-    strncpy(header.format, "WAVE", 4);
+    // fmt sub-chunk
+    header->subchunk1ID[0] = 'f';
+    header->subchunk1ID[1] = 'm';
+    header->subchunk1ID[2] = 't';
+    header->subchunk1ID[3] = ' ';
+    header->subchunk1Size = 16;
+    header->audioFormat = 1; // PCM
+    header->numChannels = numChannels;
+    header->sampleRate = sampleRate;
+    header->byteRate = sampleRate * numChannels * (bitsPerSample / 8);
+    header->blockAlign = numChannels * (bitsPerSample / 8);
+    header->bitsPerSample = bitsPerSample;
 
-    // fmt subchunk
-    strncpy(header.subchunk1ID, "fmt ", 4);
-    header.subchunk1Size = 16;
-    header.audioFormat = 1;
-    header.numChannels = numChannels;
-    header.sampleRate = sampleRate;
-    header.bitsPerSample = bitsPerSample;
-    header.byteRate = sampleRate * numChannels * bitsPerSample / 8;
-    header.blockAlign = numChannels * bitsPerSample / 8;
-
-    // data subchunk
-    strncpy(header.subchunk2ID, "data", 4);
-    header.subchunk2Size = numSamples * numChannels * (bitsPerSample / 8);
-
-    fwrite(&header, sizeof(WavHeader), 1, wavFile);
-}
-
-void writeSineWave(FILE *wavFile, int sampleRate, int duration, int frequency, int amplitude, int bitsPerSample, int numChannels) {
-    int numSamples = sampleRate * duration;
-    double sample;
-    int16_t sampleInt;
-
-    for (int i = 0; i < numSamples; ++i) {
-        // Generate sine wave value
-        sample = amplitude * sin(2 * M_PI * frequency * i / sampleRate);
-        
-        // Convert to integer format and ensure it's within bounds
-        sampleInt = (int16_t)(sample * (1 << (bitsPerSample - 1)));
-        if (sampleInt > 32767) sampleInt = 32767;
-        if (sampleInt < -32768) sampleInt = -32768;
-
-        for (int j = 0; j < numChannels; ++j) {
-            fwrite(&sampleInt, sizeof(int16_t), 1, wavFile);
-        }
-    }
+    // data sub-chunk
+    header->subchunk2ID[0] = 'd';
+    header->subchunk2ID[1] = 'a';
+    header->subchunk2ID[2] = 't';
+    header->subchunk2ID[3] = 'a';
+    header->subchunk2Size = numSamples * numChannels * (bitsPerSample / 8);
 }
 
 int main() {
-    FILE *wavFile = fopen("sine_wave.wav", "wb");
-    if (!wavFile) {
-        fprintf(stderr, "Error opening file for writing\n");
+    FILE *file = fopen("sine_wave.wav", "wb");
+    if (!file) {
+        fprintf(stderr, "Failed to open file for writing\n");
         return 1;
     }
 
     int sampleRate = 44100;
-    int duration = 5; // 5 seconds
-    int frequency = 440; // A4
-    int amplitude = 32000; // close to max value for 16-bit audio
     int bitsPerSample = 16;
     int numChannels = 1;
+    double frequency = 440.0; // A4 note
+    double duration = 5.0; // 5 seconds
 
-    writeWavHeader(wavFile, sampleRate, duration * sampleRate, bitsPerSample, numChannels);
-    writeSineWave(wavFile, sampleRate, duration, frequency, amplitude, bitsPerSample, numChannels);
+    int numSamples = (int)(duration * sampleRate);
+    WavHeader header;
+    createWavHeader(&header, sampleRate, bitsPerSample, numChannels, numSamples);
 
-    fclose(wavFile);
-    printf("WAV file sine_wave.wav created.\n");
+    fwrite(&header, sizeof(WavHeader), 1, file);
+
+    for (int i = 0; i < numSamples; ++i) {
+        double sample = 0.5 * sin((2.0 * M_PI * frequency * i) / sampleRate);
+        short sampleInt = (short)(sample * (pow(2, bitsPerSample - 1) - 1));
+        fwrite(&sampleInt, sizeof(short), 1, file);
+    }
+
+    fclose(file);
+    printf("WAV file created\n");
 
     return 0;
 }
