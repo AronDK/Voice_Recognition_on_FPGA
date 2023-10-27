@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date         : Thu Oct 26 00:42:40 2023
+| Date         : Thu Oct 26 23:27:45 2023
 | Host         : AronLaptop running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_audio_pipeline_0_0_utilization_synth.rpt -pb design_1_audio_pipeline_0_0_utilization_synth.pb
 | Design       : design_1_audio_pipeline_0_0
@@ -31,14 +31,14 @@ Table of Contents
 +----------------------------+------+-------+------------+-----------+-------+
 |          Site Type         | Used | Fixed | Prohibited | Available | Util% |
 +----------------------------+------+-------+------------+-----------+-------+
-| CLB LUTs*                  | 3554 |     0 |          0 |    117120 |  3.03 |
-|   LUT as Logic             |  994 |     0 |          0 |    117120 |  0.85 |
+| CLB LUTs*                  | 3561 |     0 |          0 |    117120 |  3.04 |
+|   LUT as Logic             | 1001 |     0 |          0 |    117120 |  0.85 |
 |   LUT as Memory            | 2560 |     0 |          0 |     57600 |  4.44 |
 |     LUT as Distributed RAM | 2560 |     0 |            |           |       |
 |     LUT as Shift Register  |    0 |     0 |            |           |       |
-| CLB Registers              |  398 |     0 |          0 |    234240 |  0.17 |
-|   Register as Flip Flop    |  365 |     0 |          0 |    234240 |  0.16 |
-|   Register as Latch        |   33 |     0 |          0 |    234240 |  0.01 |
+| CLB Registers              |  397 |     0 |          0 |    234240 |  0.17 |
+|   Register as Flip Flop    |  397 |     0 |          0 |    234240 |  0.17 |
+|   Register as Latch        |    0 |     0 |          0 |    234240 |  0.00 |
 | CARRY8                     |   18 |     0 |          0 |     14640 |  0.12 |
 | F7 Muxes                   |  256 |     0 |          0 |     58560 |  0.44 |
 | F8 Muxes                   |  128 |     0 |          0 |     29280 |  0.44 |
@@ -60,9 +60,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 65    |          Yes |           - |        Reset |
+| 32    |          Yes |           - |        Reset |
 | 9     |          Yes |         Set |            - |
-| 324   |          Yes |       Reset |            - |
+| 356   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -158,15 +158,14 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | RAMD64E  | 2560 |                 CLB |
-| LUT6     |  743 |                 CLB |
-| FDRE     |  324 |            Register |
+| LUT6     |  757 |                 CLB |
+| FDRE     |  356 |            Register |
 | MUXF7    |  256 |                 CLB |
 | MUXF8    |  128 |                 CLB |
-| LUT5     |   97 |                 CLB |
-| LUT2     |   62 |                 CLB |
-| LUT1     |   44 |                 CLB |
-| LUT4     |   39 |                 CLB |
-| LDCE     |   33 |            Register |
+| LUT4     |   76 |                 CLB |
+| LUT2     |   60 |                 CLB |
+| LUT5     |   55 |                 CLB |
+| LUT1     |   41 |                 CLB |
 | FDCE     |   32 |            Register |
 | LUT3     |   31 |                 CLB |
 | CARRY8   |   18 |                 CLB |

@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Oct 26 14:52:56 2023
+# Process ID: 21340
+# Current directory: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4980 C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.xpr
+# Log file: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/vivado.log
+# Journal file: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.xpr
+update_compile_order -fileset sources_1
+update_module_reference design_1_audio_pipeline_0_0
+launch_simulation
+open_wave_config C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg
+source i2s_master_tb.tcl
+restart
+run 31250 ns
+save_wave_config {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/i2s_master_tb_behav.wcfg}
+restart
+relaunch_sim

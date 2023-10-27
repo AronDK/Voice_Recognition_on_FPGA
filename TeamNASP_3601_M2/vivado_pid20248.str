@@ -855,3 +855,33 @@ selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aK
 // Elapsed time: 15 seconds
 selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 188, 122); // dS
 selectTab((HResource) null, (HResource) null, "Log", 2); // aK
+// WARNING: HEventQueue.dispatchEvent() is taking  3646 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  7637743 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 2,019 MB. GUI used memory: 209 MB. Current time: 10/26/23, 3:04:48 AM AEDT
+// WARNING: HEventQueue.dispatchEvent() is taking  1454709 ms.
+// Elapsed time: 9718 seconds
+closeMainWindow("TeamNASP_3601_M2 - [C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.xpr] - Vivado 2021.1"); // cs
+// Run Command: PAResourceCommand.PACommandNames_EXIT
+// bz (cs):  Close : addNotify
+// TclEventType: WAVEFORM_CLOSE_WCFG
+// TclEventType: SIMULATION_CLOSE_SIMULATION
+// WARNING: HEventQueue.dispatchEvent() is taking  1922 ms.
+// Tcl Message: close_sim 
+/*
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2021.1 (64-bit)
+# SW Build: 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build: 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Current time: Thu Oct 26 03:29:35 AEDT 2023
+# Process ID (PID): 20248
+# OS: Windows 10
+# User: gonin
+# Project: TeamNASP_3601_M2
+# Part: Kria KV260 Vision AI Starter Kit
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+java.lang.ArrayIndexOutOfBoundsException: No such child: 1 (See C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/vivado_pid20248.debug)
+*/

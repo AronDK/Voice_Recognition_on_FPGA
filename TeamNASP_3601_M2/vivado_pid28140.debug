@@ -1,0 +1,45 @@
+#--------------------------------------------------------------------------
+# Xilinx Vivado v2021.1 (64-bit)
+# SW Build: 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build: 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Current time: Thu Oct 26 20:18:47 AEDT 2023
+# Process ID (PID): 28140
+# User: gonin
+# OS: Windows 10
+#
+# This file is an indication that an internal application error occurred.
+# This information is useful for debugging. Please open a case with Xilinx.
+# Technical Support with this file and a testcase attached.
+#--------------------------------------------------------------------------
+Thu Oct 26 20:18:47 AEDT 2023
+java.lang.NullPointerException
+	at ui.utils.aj.aKI(SourceFile:159)
+	at ui.dlg.y.fxc(SourceFile:1562)
+	at ui.dlg.y.c(SourceFile:656)
+	at ui.dlg.y.a(SourceFile:545)
+	at ui.dlg.A.L.g(SourceFile:75)
+	at ui.dlg.A.ac.valueChanged(SourceFile:390)
+	at java.desktop/javax.swing.tree.DefaultTreeSelectionModel.fireValueChanged(DefaultTreeSelectionModel.java:641)
+	at java.desktop/javax.swing.tree.DefaultTreeSelectionModel.notifyPathChange(DefaultTreeSelectionModel.java:1111)
+	at java.desktop/javax.swing.tree.DefaultTreeSelectionModel.addSelectionPaths(DefaultTreeSelectionModel.java:415)
+	at java.desktop/javax.swing.tree.DefaultTreeSelectionModel.addSelectionPath(DefaultTreeSelectionModel.java:313)
+	at ui.dlg.A.T.k(SourceFile:787)
+	at ui.dlg.A.T.gvv(SourceFile:472)
+	at ui.dlg.A.T.fOf(SourceFile:395)
+	at ui.dlg.A.T.gvq(SourceFile:320)
+	at ui.dlg.A.T.init(SourceFile:93)
+	at ui.dlg.A.L.<init>(SourceFile:48)
+	at ui.dlg.J.a.O.gIT(SourceFile:37)
+	at ui.dlg.J.a.bLk(SourceFile:86)
+	at ui.dlg.J.d.uq(SourceFile:574)
+	at ui.dlg.J.d.aLQ(SourceFile:434)
+	at ui.dlg.c.p.fze(SourceFile:104)
+	at ui.dlg.c.p.fzc(SourceFile:55)
+	at ui.dlg.c.p.init(SourceFile:44)
+	at ui.dlg.J.d.init(SourceFile:169)
+	at ui.dlg.J.d.<init>(SourceFile:142)
+	at ui.views.c.dX.O(SourceFile:112)
+	at ui.cW.aOo(SourceFile:905)
+	at ui.frmwork.y.run(SourceFile:203)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+

@@ -70,8 +70,10 @@ begin
         
         if clk_counter = "100000" then
             clk_counter <= (others => '0');
+            fifo_full <= '0';
         else 
             clk_counter <= clk_counter + 1;
+            
         end if;
         i2s_dout <= not(i2s_dout); 
     end process;
