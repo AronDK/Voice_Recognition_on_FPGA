@@ -30,7 +30,7 @@
 
 
 #define TRANSFER_RUNS 10
-#define NUM_CHANNELS 2
+#define NUM_CHANNELS 1
 #define BPS 24
 #define SAMPLE_RATE 44100
 #define RECORD_DURATION 10
@@ -97,7 +97,16 @@ int main() {
         printf("==============================\n");
     }
     
-    audio_i2s_release(&my_config);
+    wav_file_t* wav_file = wav_file_create("sine_wave.wav", SAMPLE_RATE, NUM_CHANNELS, BPS);
+    if (wav_file == NULL) {
+        fprintf(stderr, "Failed to create WAV file\n");
+        return 1;
+    }
 
+    for (int i = 0; i < TRANSFER_RUNS; i++) {
+        wav_file_write(wav_file, frames[i], TRANSFER_LEN);
+    }
+    wav_file_close(wav_file);
+    audio_i2s_release(&my_config);
     return 0;
 }

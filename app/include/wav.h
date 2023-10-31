@@ -1,8 +1,10 @@
 #ifndef WAV_H
 #define WAV_H
 
-#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
+#include <stdint.h>
 
 // Define a structure to hold WAV file header information
 typedef struct {
@@ -32,7 +34,7 @@ typedef struct {
 } wav_file_t;
 
 wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t num_channels, uint16_t bits_per_sample);
-void wav_file_write(wav_file_t *wav_file, const int32_t *data, size_t num_samples);
+void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples);
 void wav_file_close(wav_file_t *wav_file);
 
 #endif // WAV_H

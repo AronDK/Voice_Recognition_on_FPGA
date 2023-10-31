@@ -8,7 +8,7 @@
 #define FREQUENCY 440.0
 #define AMPLITUDE 0.5
 #define NUM_CHANNELS 1
-#define BITS_PER_SAMPLE 16
+#define BITS_PER_SAMPLE 24
 
 int main() {
     uint32_t num_samples = SAMPLE_RATE * DURATION;
