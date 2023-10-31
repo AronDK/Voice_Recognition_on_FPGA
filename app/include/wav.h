@@ -2,7 +2,6 @@
 #define WAV_H
 
 #include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 #include <stdint.h>
 
@@ -30,11 +29,15 @@ typedef struct {
     uint32_t data_size;
     uint32_t sample_rate;
     uint16_t num_channels;
-    uint16_t bits_per_sample;
 } wav_file_t;
 
-wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t num_channels, uint16_t bits_per_sample);
-void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples);
+// Function to create a new WAV file
+wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t num_channels);
+
+// Function to write data to the WAV file
+void wav_file_write(wav_file_t *wav_file, int32_t *data, size_t num_samples);
+
+// Function to close the WAV file and update the header
 void wav_file_close(wav_file_t *wav_file);
 
 #endif // WAV_H

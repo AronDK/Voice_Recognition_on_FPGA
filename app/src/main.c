@@ -85,10 +85,9 @@ int main() {
     printf("After writing to gain: %08x\n", audio_i2s_get_reg(&my_config, AUDIO_I2S_GAIN));
     printf("Initialized audio_i2s\n");
     printf("Starting audio_i2s_recv\n");
-
     for (int i = 0; i < TRANSFER_RUNS; i++) {
         int32_t *samples = audio_i2s_recv(&my_config);
-        memcpy(frames[i], samples, TRANSFER_LEN*sizeof(uint32_t));
+        memcpy(frames[i], samples, TRANSFER_LEN*sizeof(int32_t));
     }
 
     for (int i = 0; i < TRANSFER_RUNS; i++) {
@@ -97,7 +96,7 @@ int main() {
         printf("==============================\n");
     }
     
-    wav_file_t* wav_file = wav_file_create("test.wav", SAMPLE_RATE, NUM_CHANNELS, BPS);
+    wav_file_t* wav_file = wav_file_create("test.wav", SAMPLE_RATE, NUM_CHANNELS);
     if (wav_file == NULL) {
         fprintf(stderr, "Failed to create WAV file\n");
         return 1;
