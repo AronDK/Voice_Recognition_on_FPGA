@@ -6,7 +6,7 @@
 
 wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t num_channels, uint16_t bits_per_sample) {
     // Allocate memory for wav_file_t structure
-    wav_file_t *wav_file = (wav_file_t *)malloc(sizeof(wav_file_t) + sizeof(uint8_t) * 256 * 10 * (bits_per_sample)/8);
+    wav_file_t *wav_file = (wav_file_t *)malloc(sizeof(wav_file_t));
     if (wav_file == NULL) {
         fprintf(stderr, "Error allocating memory for wav_file_t\n");
         return NULL;
@@ -35,7 +35,7 @@ wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t
     header.chunk_size = 36;  // Will be updated later
     strncpy(header.format, "WAVE", 4);
     strncpy(header.subchunk1_id, "fmt ", 4);
-    header.subchunk1_size = 24;  // PCM header size
+    header.subchunk1_size = 16;  // PCM header size
     header.audio_format = 1;  // PCM format
     header.num_channels = num_channels;
     header.sample_rate = sample_rate;
@@ -67,7 +67,7 @@ void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples) {
     size_t bytes_per_sample = wav_file->bits_per_sample / 8;
 
     // Allocate buffer to convert and hold the audio samples in the correct format
-    uint8_t *buffer = (uint8_t *)malloc(sizeof(uint8_t) * num_samples * bytes_per_sample);
+    uint8_t *buffer = (uint8_t *)malloc(num_samples * bytes_per_sample);
     if (!buffer) {
         fprintf(stderr, "Failed to allocate memory for audio data buffer\n");
         return;
@@ -76,17 +76,22 @@ void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples) {
     // Convert and copy the audio samples to the buffer
     for (size_t i = 0; i < num_samples; ++i) {
         int32_t sample = data[i];
-        sample = sample >> 8;  // Convert to 24-bit sample
+
+        // If the WAV file is 16 bits per sample, downscale the 32-bit samples
+        if (wav_file->bits_per_sample == 16) {
+            sample = sample >> 16;
+        }
+
         // Copy the audio sample to the buffer, considering endianness
         for (size_t byte = 0; byte < bytes_per_sample; ++byte) {
-            buffer[i * bytes_per_sample + byte] = sample >> (byte * 8);
+            buffer[i * bytes_per_sample + byte] = (sample >> (byte * 8)) & 0xFF;
         }
     }
 
     // Write the buffer to the WAV file
-    size_t written = fwrite(buffer, bytes_per_sample, num_samples, wav_file->file);
+    size_t written = fwrite(buffer, 1, num_samples * bytes_per_sample, wav_file->file);
     if (written != num_samples * bytes_per_sample) {
-        fprintf(stderr, "Failed to write audio data to WAV file, written = %d\n", written);
+        fprintf(stderr, "Failed to write audio data to WAV file\n");
     } else {
         // Update the data size in the WAV file structure
         wav_file->data_size += written;
@@ -112,7 +117,7 @@ void wav_file_close(wav_file_t *wav_file) {
     header.chunk_size = 36 + wav_file->data_size;  // Size of the entire file minus 8 bytes
     strncpy(header.format, "WAVE", 4);
     strncpy(header.subchunk1_id, "fmt ", 4);
-    header.subchunk1_size = 24;  // PCM header size
+    header.subchunk1_size = 16;  // PCM header size
     header.audio_format = 1;  // PCM format
     header.num_channels = wav_file->num_channels;
     header.sample_rate = wav_file->sample_rate;
