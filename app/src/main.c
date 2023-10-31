@@ -97,7 +97,7 @@ int main() {
         printf("==============================\n");
     }
     
-    wav_file_t* wav_file = wav_file_create("sine_wave.wav", SAMPLE_RATE, NUM_CHANNELS, BPS);
+    wav_file_t* wav_file = wav_file_create("test.wav", SAMPLE_RATE, NUM_CHANNELS, BPS);
     if (wav_file == NULL) {
         fprintf(stderr, "Failed to create WAV file\n");
         return 1;
