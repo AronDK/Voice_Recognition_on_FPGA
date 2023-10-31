@@ -57,7 +57,7 @@ wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t
     return wav_file;
 }
 
-void wav_file_write(wav_file_t *wav_file, int32_t *data, size_t num_samples) {
+void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples) {
     if (!wav_file || !data || num_samples == 0) {
         fprintf(stderr, "Invalid arguments passed to wav_file_write\n");
         return;
