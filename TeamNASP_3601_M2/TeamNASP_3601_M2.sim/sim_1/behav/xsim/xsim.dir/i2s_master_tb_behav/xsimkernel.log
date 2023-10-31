@@ -2,3 +2,6 @@ Running: xsim.dir/i2s_master_tb_behav/xsimk.exe -simmode gui -wdb i2s_master_tb_
 Design successfully loaded
 Design Loading Memory Usage: 7512 KB (Peak: 7512 KB)
 Design Loading CPU Usage: 15 ms
+Simulation completed
+Simulation Memory Usage: 8984 KB (Peak: 8984 KB)
+Simulation CPU Usage: 15 ms
