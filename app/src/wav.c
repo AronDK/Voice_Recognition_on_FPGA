@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t num_channels) {
+wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t num_channels, size_t num_samples, size_t bits_per_sample) {
     // Allocate memory for wav_file_t structure
     wav_file_t *wav_file = (wav_file_t *)malloc(sizeof(wav_file_t));
     if (wav_file == NULL) {
@@ -16,7 +16,7 @@ wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t
     wav_file->filename = strdup(filename);
     wav_file->sample_rate = sample_rate;
     wav_file->num_channels = num_channels;
-    wav_file->bits_per_sample = 32;  // Set to 32 bits per sample
+    wav_file->bits_per_sample = bits_per_sample;  // Set to 32 bits per sample
     wav_file->data_size = 0;
 
     // Open the WAV file for writing
@@ -32,18 +32,18 @@ wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t
     wav_header_t header;
     memset(&header, 0, sizeof(wav_header_t));
     strncpy(header.chunk_id, "RIFF", 4);
-    header.chunk_size = 36;  // Will be updated later
     strncpy(header.format, "WAVE", 4);
     strncpy(header.subchunk1_id, "fmt ", 4);
     header.subchunk1_size = 16;  // PCM header size
     header.audio_format = 1;  // PCM format
     header.num_channels = num_channels;
     header.sample_rate = sample_rate;
-    header.byte_rate = sample_rate * num_channels * 4;  // 4 bytes per 32-bit sample
-    header.block_align = num_channels * 4;  // 4 bytes per 32-bit sample
-    header.bits_per_sample = 32;  // 32 bits per sample
+    header.byte_rate = sample_rate * num_channels * (wav_file->bits_per_sample/8);  // 4 bytes per 32-bit sample
+    header.block_align = num_channels * (wav_file->bits_per_sample/8);  // 4 bytes per 32-bit sample
+    header.bits_per_sample = bits_per_sample;  // 32 bits per sample
     strncpy(header.subchunk2_id, "data", 4);
-    header.subchunk2_size = 0;  // Will be updated later
+    header.subchunk2_size = num_channels * (wav_file->bits_per_sample/8) * num_samples;  // Will be updated later
+    header.chunk_size = 4 + (header.subchunk1_size + 8) + (header.subchunk2_size + 8);  // Will be updated later
 
     size_t written = fwrite(&header, 1, sizeof(wav_header_t), wav_file->file);
     if (written != sizeof(wav_header_t)) {
@@ -64,7 +64,7 @@ void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples) {
     }
 
     // Write the 32-bit audio sample data to the WAV file
-    size_t written = fwrite(data, sizeof(int32_t), num_samples, wav_file->file);
+    size_t written = fwrite(data, wav_file->bits_per_sample/8, num_samples, wav_file->file);
     if (written != num_samples) {
         fprintf(stderr, "Failed to write audio data to WAV file\n");
     } else {

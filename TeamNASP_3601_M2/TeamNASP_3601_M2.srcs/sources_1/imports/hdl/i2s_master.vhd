@@ -36,7 +36,7 @@ architecture Behavioral of i2s_master is
     signal bclk, prev_word: std_ulogic := '0'; -- Bclk signal, start low
     signal word, prev_bclk: std_ulogic := '1'; -- WS/lrcl, start high
     signal ws_counter: unsigned (5 downto 0) := "000001"; -- counter for 4 bytes / 32 bclk clock cyles
-    signal bclk_counter: unsigned (4 downto 0) := "00000"; -- counter for 22 clk_1 cycles
+    signal bclk_counter: unsigned (5 downto 0) := "000000"; -- counter for 22 clk_1 cycles
     signal readable: boolean := false; -- If false, in 32-64 bit range, true if in 0-32 bit range (first 3 states)
     signal bit_count: integer := DATA_WIDTH - 1; -- Bitcount for shift register, counts down on every bclk so MSB is leftmost bit for FIFO Bufffer
     signal fsm_state: integer := 0; -- State counter
@@ -55,10 +55,10 @@ begin
                 bit_count <= DATA_WIDTH - 1;
             end if;
             case bclk_counter is
-                when "10110" =>
+                when "100011" =>
                     prev_bclk <= bclk;
                     bclk <= not(bclk);
-                    bclk_counter <= "00000";
+                    bclk_counter <= "000000";
                     if bclk = '0' then
                         bit_count <= bit_count - 1; -- Decrements every bclk
                         if ws_counter = "100000" then 

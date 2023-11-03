@@ -33,7 +33,7 @@ typedef struct {
 } wav_file_t;
 
 // Function to create a new WAV file
-wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t num_channels);
+wav_file_t* wav_file_create(const char *filename, uint32_t sample_rate, uint16_t num_channels, size_t num_samples, size_t bits_per_sample);
 
 // Function to write data to the WAV file
 void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples);

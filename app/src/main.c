@@ -29,18 +29,19 @@
 #include "wav.h"
 
 
-#define TRANSFER_RUNS 10
 #define NUM_CHANNELS 1
 #define BPS 24
-#define SAMPLE_RATE 44100
+#define SAMPLE_RATE 44600 / 2
 #define RECORD_DURATION 10
+#define TRANSFER_RUNS RECORD_DURATION * SAMPLE_RATE / TRANSFER_LEN
+
 
 void bin(uint8_t n) {
     uint8_t i;
     // for (i = 1 << 7; i > 0; i = i >> 1)
     //     (n & i) ? printf("1") : printf("0");
-    for (i = 0; i < 8; i++) // LSB first
-        (n & (1 << i)) ? printf("1") : printf("0");
+    // for (i = 0; i < 8; i++) // LSB first
+    //     (n & (1 << i)) ? printf("1") : printf("0");
 }
 
 void parsemem(void* virtual_address, int word_count) {
@@ -56,9 +57,9 @@ void parsemem(void* virtual_address, int word_count) {
 
         for (int i = 0; i < 4; i++) {
             bin(b[offset*4+i]);
-            printf(" ");
+            // printf(" ");
         }
-        printf(" -> [%d]: %02x (%dp)\n", sample_count, sample_value, sample_value*100/((1<<18)-1));
+        // printf(" -> [%d]: %02x (%dp)\n", sample_count, sample_value, sample_value*100/((1<<18)-1));
     }
 
 }
@@ -91,19 +92,19 @@ int main() {
     }
 
     for (int i = 0; i < TRANSFER_RUNS; i++) {
-        printf("Frame %d:\n", i);
+        // printf("Frame %d:\n", i);
         parsemem(frames[i], TRANSFER_LEN);
-        printf("==============================\n");
+        // printf("==============================\n");
     }
     
-    wav_file_t* wav_file = wav_file_create("test.wav", SAMPLE_RATE, NUM_CHANNELS);
+    wav_file_t* wav_file = wav_file_create("test.wav", SAMPLE_RATE, NUM_CHANNELS, TRANSFER_LEN * TRANSFER_RUNS, BPS);
     if (wav_file == NULL) {
         fprintf(stderr, "Failed to create WAV file\n");
         return 1;
     }
 
     for (int i = 0; i < TRANSFER_RUNS; i++) {
-        wav_file_write(wav_file, frames[i], TRANSFER_LEN);
+        if (i % 2 == 0) wav_file_write(wav_file, frames[i], TRANSFER_LEN);
     }
     wav_file_close(wav_file);
     audio_i2s_release(&my_config);
