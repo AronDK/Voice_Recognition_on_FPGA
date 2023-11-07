@@ -108,8 +108,6 @@ int main() {
     }
     wav_file_close(wav_file);
 
-
-
     audio_i2s_release(&my_config);
     return 0;
 }
