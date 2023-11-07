@@ -62,6 +62,11 @@ void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples) {
         fprintf(stderr, "Invalid arguments passed to wav_file_write\n");
         return;
     }
+     
+    for (int i = 0; i < num_samples; i++) {
+        // Reverse the bits in the sample data
+        data[i] = reverseBits(data[i]);
+    }
 
     // Write the 32-bit audio sample data to the WAV file
     size_t written = fwrite(data, wav_file->bits_per_sample/8, num_samples, wav_file->file);
@@ -110,4 +115,17 @@ void wav_file_close(wav_file_t *wav_file) {
     // Free the memory allocated for the filename and the WAV file structure
     free(wav_file->filename);
     free(wav_file);
+}
+
+// Function to reverse the bits in an unsigned integer
+// Found on https://www.geeksforgeeks.org/write-an-efficient-c-program-to-reverse-bits-of-a-number/
+uint32_t reverseBits(uint32_t num) {
+    int NO_OF_BITS = sizeof(num) * 8;
+    uint32_t reverse_num = 0;
+    int i;
+    for (i = 0; i < NO_OF_BITS; i++) {
+        if ((num & (1 << i)))
+            reverse_num |= 1 << ((NO_OF_BITS - 1) - i);
+    }
+    return reverse_num;
 }

@@ -29,7 +29,7 @@
 #include "wav.h"
 
 
-#define NUM_CHANNELS 1
+#define NUM_CHANNELS 1  
 #define BPS 24
 #define SAMPLE_RATE 44600 / 2
 #define RECORD_DURATION 10
@@ -104,9 +104,12 @@ int main() {
     }
 
     for (int i = 0; i < TRANSFER_RUNS; i++) {
-        if (i % 2 == 0) wav_file_write(wav_file, frames[i], TRANSFER_LEN);
+        wav_file_write(wav_file, frames[i], TRANSFER_LEN);
     }
     wav_file_close(wav_file);
+
+
+
     audio_i2s_release(&my_config);
     return 0;
 }

@@ -41,4 +41,7 @@ void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples);
 // Function to close the WAV file and update the header
 void wav_file_close(wav_file_t *wav_file);
 
+// Function to reverse the bits in an unsigned integer
+uint32_t reverseBits(unsigned int num);
+
 #endif // WAV_H
