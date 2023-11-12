@@ -20,20 +20,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
-
+#include <stdlib.h>
+#include "kiss_fft.h"
 #include "audio_i2s.h"
 #include "wav.h"
-
 
 #define NUM_CHANNELS 1  
 #define BPS 24
 #define SAMPLE_RATE 44600 / 2
 #define RECORD_DURATION 10
 #define TRANSFER_RUNS RECORD_DURATION * SAMPLE_RATE / TRANSFER_LEN
+
+// Define the notch filter frequency
+#define NOTCH_FREQ 1000  // Replace with the frequency you want to notch
 
 
 void bin(uint8_t n) {
@@ -64,6 +66,48 @@ void parsemem(void* virtual_address, int word_count) {
 
 }
 
+// Function to apply a notch filter using Kiss FFT
+void apply_notch_filter(uint32_t *frame, size_t frame_size, float sample_rate, float notch_freq) {
+    float bin_width = sample_rate / frame_size;
+    int notch_bin = notch_freq / bin_width;
+
+    kiss_fft_cpx *in = (kiss_fft_cpx*)malloc(sizeof(kiss_fft_cpx) * frame_size);
+    kiss_fft_cpx *out = (kiss_fft_cpx*)malloc(sizeof(kiss_fft_cpx) * frame_size);
+    kiss_fft_cfg cfg = kiss_fft_alloc(frame_size, 0, NULL, NULL);
+
+    // Fill input buffer
+    for (size_t i = 0; i < frame_size; i++) {
+        in[i].r = frame[i];
+        in[i].i = 0;
+    }
+
+    // Perform FFT
+    kiss_fft(cfg, in, out);
+
+    // Apply notch filter in the frequency domain
+    for (size_t i = notch_bin - 1; i <= notch_bin + 1; i++) {  // Simple notch filter
+        out[i].r *= 0.1;  // Attenuate the real part
+        out[i].i *= 0.1;  // Attenuate the imaginary part
+    }
+
+    // Perform inverse FFT
+    kiss_fft_cfg icfg = kiss_fft_alloc(frame_size, 1, NULL, NULL);
+    kiss_fft(icfg, out, in);
+
+    // Copy back to frame
+    for (size_t i = 0; i < frame_size; i++) {
+        frame[i] = in[i].r;
+    }
+
+    // Cleanup
+    free(in);
+    free(out);
+    free(cfg);
+    free(icfg);
+}
+
+
+
 int main() {
     printf("Entered main\n");
 
@@ -89,6 +133,9 @@ int main() {
     for (int i = 0; i < TRANSFER_RUNS; i++) {
         int32_t *samples = audio_i2s_recv(&my_config);
         memcpy(frames[i], samples, TRANSFER_LEN*sizeof(int32_t));
+    
+        // Apply notch filter to each frame
+        apply_notch_filter(frames[i], TRANSFER_LEN);
     }
 
     for (int i = 0; i < TRANSFER_RUNS; i++) {
