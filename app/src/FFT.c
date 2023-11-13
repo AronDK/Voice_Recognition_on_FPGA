@@ -4,7 +4,13 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
 #include "FFT.h"
+
 
 /* Print a vector of complexes as ordered pairs. */
 static void
@@ -34,8 +40,7 @@ print_vector(
    [9]   Let v[m+N/2] = ve[m] - w*vo[m]
  */
 void
-fft( complex *v, int n, complex *tmp )
-{
+fft( complex *v, int n, complex *tmp ) {
   if(n>1) {			/* otherwise, do nothing and return */
     int k,m;    complex z, w, *vo, *ve;
     ve = tmp; vo = tmp+n/2;
@@ -73,8 +78,7 @@ fft( complex *v, int n, complex *tmp )
    [9]   Let v[m+N/2] = ve[m] - w*vo[m]
  */
 void
-ifft( complex *v, int n, complex *tmp )
-{
+ifft( complex *v, int n, complex *tmp ) {
   if(n>1) {			/* otherwise, do nothing and return */
     int k,m;    complex z, w, *vo, *ve;
     ve = tmp; vo = tmp+n/2;
@@ -98,33 +102,47 @@ ifft( complex *v, int n, complex *tmp )
   return;
 }
 
-int
-main(void)
-{
-  complex v[N], v1[N], scratch[N];
-  int k;
-
-  /* Fill v[] with a function of known FFT: */
-  for(k=0; k<N; k++) {
-    v[k].Re = 0.125*cos(2*PI*k/(double)N);
-    v[k].Im = 0.125*sin(2*PI*k/(double)N);
-    v1[k].Re =  0.3*cos(2*PI*k/(double)N);
-    v1[k].Im = -0.3*sin(2*PI*k/(double)N);
+complex *DirAvg(DIR *dir, char *profileName, int transLen, int transRuns) {
+  // Read .txt files from directory as complex frames
+  struct dirent *de;
+  int count, i = 0;
+  complex *cur = (complex *)malloc(transLen * transRuns * sizeof(complex));
+  complex *next = (complex *)malloc(transLen * transRuns * sizeof(complex));
+  while (de = readdir(dir) != NULL) {     
+    FILE *fp = fopen(de->d_name, "r");
+    for (i = 0; fscanf(fp, "%f,%f", &next[i].Re, &next[i].Im) != EOF; i++) {
+      cur[i].Re += next[i].Re;
+      cur[i].Im += next[i].Im;
+    } 
+    fclose(fp);
+    count++;
   }
-    
-  /* FFT, iFFT of v[]: */
-  print_vector("Orig", v, N);
-  fft( v, N, scratch );
-  print_vector(" FFT", v, N);
-  ifft( v, N, scratch );
-  print_vector("iFFT", v, N);
+  
+  for (i--; i >= 0; i--) {
+    cur[i].Re /= count;
+    cur[i].Im /= count;
+  }
 
-  /* FFT, iFFT of v1[]: */
-  print_vector("Orig", v1, N);
-  fft( v1, N, scratch );
-  print_vector(" FFT", v1, N);
-  ifft( v1, N, scratch );
-  print_vector("iFFT", v1, N);
+  return cur;
+}
 
-  exit(EXIT_SUCCESS);
+complex *fft_setup(uint32_t frames[][256], int transLens, int transRuns) {
+  complex *fft_input = (complex *)malloc(transLens * transRuns * sizeof(complex));
+  for (int i = 0; i < transRuns; i++) {
+      for (int j = 0; j < transLens; j++) {
+          fft_input[i * transLens + j].Re = frames[j][i];
+          fft_input[i * transLens + j].Im = frames[j][i];
+      }
+  }
+  complex *tmp = (complex *)malloc(transLens * transRuns * sizeof(complex));
+  fft(&fft_input, transLens * transRuns, tmp);
+  free(tmp);
+}
+
+void saveWaveform(DIR *dir, char *filename, complex *waveform) {
+  time_t seconds;
+  seconds = time(NULL);
+  char *filename = strcat(seconds, ".txt");
+  FILE *fp = fopen(filename, "w");
+  fprintf(fp, "%s", waveform);
 }

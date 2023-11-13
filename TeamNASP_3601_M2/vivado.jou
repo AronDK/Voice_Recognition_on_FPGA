@@ -2,41 +2,13 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Fri Nov  3 16:09:59 2023
-# Process ID: 3236
+# Start of session at: Mon Nov 13 18:45:35 2023
+# Process ID: 34160
 # Current directory: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16256 C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22572 C:\Users\gonin\Documents\COMP3601\COMP3601_TeamNASP\TeamNASP_3601_M2\TeamNASP_3601_M2.xpr
 # Log file: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/vivado.log
 # Journal file: C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.xpr
 update_compile_order -fileset sources_1
-open_hw_manager
-connect_hw_server -allow_non_jtag
-open_hw_target
-set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
-current_hw_device [get_hw_devices xck26_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xck26_0] 0]
-current_hw_device [get_hw_devices arm_dap_1]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices arm_dap_1] 0]
-current_hw_device [get_hw_devices xck26_0]
-refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xck26_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
-set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
-program_hw_devices [get_hw_devices xck26_0]
-refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
-refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xck26_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
-set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
-program_hw_devices [get_hw_devices xck26_0]
-refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
-refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
-set_property PROBES.FILE {} [get_hw_devices xck26_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
-set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
-program_hw_devices [get_hw_devices xck26_0]
-refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
-close_hw_manager

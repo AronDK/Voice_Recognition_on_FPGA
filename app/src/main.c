@@ -13,7 +13,7 @@
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * IMPLIED, INCLUDING BUT NOT LIMITEDTO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
@@ -24,9 +24,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <time.h>
+#include <unistd.h>
 
 #include "audio_i2s.h"
 #include "wav.h"
+#include "FFT.h"
 
 
 #define NUM_CHANNELS 1  
@@ -35,6 +41,33 @@
 #define RECORD_DURATION 10
 #define TRANSFER_RUNS RECORD_DURATION * SAMPLE_RATE / TRANSFER_LEN
 
+void addToProfile(complex *waveform, DIR *dir, char *name) {
+    printf("\nEnter sound profile name to save to: ");
+    scanf("%s", name);        
+    // Find Directory
+    dir = opendir(name);
+    while (dir == NULL) {
+        printf("\nDirectory not found. Enter sound profile name to save to: ");
+        scanf("%s", name);
+        dir = opendir(name);
+    }
+    saveWaveform(dir, name, waveform);
+    complex *avg = DirAvg(dir, name, TRANSFER_LEN, TRANSFER_RUNS);
+    DIR *avgdir = opendir(strcat(name, "avg"));
+    saveWaveform(avgdir, name, avg);
+}
+
+void makeNewProfile(complex *waveform, DIR *dir, char *name) {
+    printf("\nEnter sound profile name: ");
+    scanf("%s", name);
+    mkdir(name, 0777);
+    dir = opendir(name); 
+    saveWaveform(dir, name, waveform);
+    complex *avg = DirAvg(dir, name, TRANSFER_LEN, TRANSFER_RUNS);
+    mkdir(strcat(name, "avg"), 0777);
+    DIR *avgdir = opendir(strcat(name, "avg"));
+    saveWaveform(avgdir, name, avg);
+}
 
 void bin(uint8_t n) {
     uint8_t i;
@@ -64,11 +97,9 @@ void parsemem(void* virtual_address, int word_count) {
 
 }
 
-int main() {
+int main(int argc, char **argv) {
     printf("Entered main\n");
-
     uint32_t frames[TRANSFER_RUNS][TRANSFER_LEN] = {0};
-
     audio_i2s_t my_config;
     if (audio_i2s_init(&my_config) < 0) {
         printf("Error initializing audio_i2s\n");
@@ -90,7 +121,7 @@ int main() {
         int32_t *samples = audio_i2s_recv(&my_config);
         memcpy(frames[i], samples, TRANSFER_LEN*sizeof(int32_t));
     }
-
+    
     for (int i = 0; i < TRANSFER_RUNS; i++) {
         // printf("Frame %d:\n", i);
         parsemem(frames[i], TRANSFER_LEN);
@@ -107,6 +138,38 @@ int main() {
         wav_file_write(wav_file, frames[i], TRANSFER_LEN);
     }
     wav_file_close(wav_file);
+
+
+    // Perform FFT on frames
+    complex *waveform = fft_setup(frames, TRANSFER_LEN, TRANSFER_RUNS);
+    if (argv[1][0] == '1') {
+        int response; DIR *dir; char *name;
+        printf("Save to existing sound profile or create new one? (1/0): ");
+        scanf("%d", &response);
+        if (response == 1) addToProfile(waveform, dir, name);
+        else makeNewProfile(waveform, dir, name);
+    } else if (argv[1][0] == '0') {
+        // Compare to existing sound profiles
+        DIR *dir; char *name;
+        printf("Enter sound profile name to compare to: ");
+        scanf("%s", name);
+        dir = opendir(strcat(name, "avg"));
+        FILE *fp = fopen(name, "r");
+        complex *avg = (complex *)malloc(TRANSFER_LEN * TRANSFER_RUNS * sizeof(complex));
+        for (int i = 0; fscanf(fp, "%f,%f", &avg[i].Re, &avg[i].Im) != EOF; i++);
+        fclose(fp);
+
+        // Compare
+        int count = 0;
+        for (int i = 0; i < TRANSFER_LEN * TRANSFER_RUNS; i++) {
+            // Within 5% of average (Uncertainty)
+            if (waveform[i].Re <= (avg[i].Re + avg[i].Re * 0.05) && 
+            waveform[i].Re >= (avg[i].Re - avg[i].Re * 0.05) && 
+            waveform[i].Im <= (avg[i].Im + avg[i].Im * 0.05) && 
+            waveform[i].Im >= (avg[i].Im - avg[i].Im * 0.05)) count++;
+        }
+        printf("Matched %d/%d samples\n", count, TRANSFER_LEN * TRANSFER_RUNS);
+    }
 
     audio_i2s_release(&my_config);
     return 0;

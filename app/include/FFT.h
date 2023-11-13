@@ -4,8 +4,13 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-#define q	3		/* for 2^3 points */
+#define q	8		/* for 2^3 points */
 #define N	(1<<q)		/* N-point FFT, iFFT */
 
 typedef float real;
@@ -23,3 +28,12 @@ static void fft( complex *v, int n, complex *tmp );
 
 // Inverse FFT
 static void ifft( complex *v, int n, complex *tmp );
+
+// Setup FFT with wav inputs
+complex *fft_setup(uint32_t frames[][256], int transLens, int transRuns);
+
+// Setup FFT with wav inputs
+void saveWaveform(DIR *dir, char *filename, complex *waveform);
+
+// Average directory
+complex *DirAvg(DIR *dir, char *profileName, int transLen, int transRuns); 
