@@ -1,7 +1,7 @@
 CC       ?= gcc
 CXX      ?= g++
 LANGFLAG = -x c++
-CPPFLAGS += -I include/
+CPPFLAGS += -I include/ -I src/kissfft-master
 CFLAGS   += -g -Wall -O2 -std=c++11
 LDFLAGS  += $(LIBS) -lpthread -lz -rdynamic
 BUILD_DIR = build

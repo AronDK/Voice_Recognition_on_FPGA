@@ -135,7 +135,7 @@ int main() {
         memcpy(frames[i], samples, TRANSFER_LEN*sizeof(int32_t));
     
         // Apply notch filter to each frame
-        apply_notch_filter(frames[i], TRANSFER_LEN);
+        apply_notch_filter(frames[i], TRANSFER_LEN, SAMPLE_RATE, NOTCH_FREQ);
     }
 
     for (int i = 0; i < TRANSFER_RUNS; i++) {
