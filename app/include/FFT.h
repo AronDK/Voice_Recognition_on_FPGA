@@ -20,20 +20,11 @@ typedef struct{real Re; real Im;} complex;
 # define PI	3.14159265358979323846264338327950288
 #endif
 
-
-static void print_vector( const char *title, complex *x, int n);
-
 // FFT
 static void fft( complex *v, int n, complex *tmp );
-
-// Inverse FFT
-static void ifft( complex *v, int n, complex *tmp );
-
 // Setup FFT with wav inputs
 complex *fft_setup(uint32_t frames[][256], int transLens, int transRuns);
-
 // Setup FFT with wav inputs
 void saveWaveform(DIR *dir, char *filename, complex *waveform);
-
 // Average directory
 complex *DirAvg(DIR *dir, char *profileName, int transLen, int transRuns); 

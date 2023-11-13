@@ -11,6 +11,7 @@ OBJ = $(BUILD_DIR)/main.o \
       $(BUILD_DIR)/audio_i2s.o \
       $(BUILD_DIR)/axi_dma.o \
 	  $(BUILD_DIR)/wav.o \
+	  $(BUILD_DIR)/FFT.o \
 
 .PHONY: clean
 
@@ -32,6 +33,9 @@ $(BUILD_DIR)/axi_dma.o: src/axi_dma.c include/axi_dma.h include/misc.h
 	$(CXX) $(CFLAGS) $(CPPFLAGS) $(LANGFLAG) $< -c -o $@
 
 $(BUILD_DIR)/wav.o: src/wav.c include/wav.h
+	$(CXX) $(CFLAGS) $(CPPFLAGS) $(LANGFLAG) $< -c -o $@
+
+$(BUILD_DIR)/FFT.o: src/FFT.cpp include/FFT.h
 	$(CXX) $(CFLAGS) $(CPPFLAGS) $(LANGFLAG) $< -c -o $@
 
 clean:
