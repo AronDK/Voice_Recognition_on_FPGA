@@ -69,7 +69,7 @@ void wav_file_write(wav_file_t *wav_file, uint32_t *data, size_t num_samples) {
     }
 
     // Write the 32-bit audio sample data to the WAV file
-    size_t written = fwrite(data, wav_file->bits_per_sample/8, num_samples - 2, wav_file->file);
+    size_t written = fwrite(data, wav_file->bits_per_sample/8, num_samples, wav_file->file);
     if (written != num_samples) {
         fprintf(stderr, "Failed to write audio data to WAV file\n");
     } else {

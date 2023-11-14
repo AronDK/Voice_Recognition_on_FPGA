@@ -21,14 +21,19 @@
  * SOFTWARE.
  */
 
+#include <assert.h>
+#include <math.h>
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 #include <stdint.h>
 #include <dirent.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include <time.h>
 #include <unistd.h>
+#include <time.h>
+#include <string.h>
+#include <stdbool.h>
+#include <math.h>
 
 #include "audio_i2s.h"
 #include "wav.h"
@@ -43,6 +48,17 @@
 
 void addToProfile(complex *waveform, DIR *dir, char *name) {
     printf("\nEnter sound profile name to save to: ");
+
+    // Print all sound profiles avaliable, ignore avg folders
+    DIR *d;
+    struct dirent *de;
+    d = opendir(".");
+    while ((de = readdir(d)) != NULL) {
+        if (strcmp(de->d_name, "avg") != 0) {
+            printf("%s\n", de->d_name);
+        }
+    }
+
     scanf("%s", name);        
     // Find Directory
     dir = opendir(name);
@@ -51,10 +67,25 @@ void addToProfile(complex *waveform, DIR *dir, char *name) {
         scanf("%s", name);
         dir = opendir(name);
     }
-    saveWaveform(dir, name, waveform);
+    saveWaveform(dir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS);
+
     complex *avg = DirAvg(dir, name, TRANSFER_LEN, TRANSFER_RUNS);
     DIR *avgdir = opendir(strcat(name, "avg"));
-    saveWaveform(avgdir, name, avg);
+    FILE *fp = fopen(name, "r");
+    int size;
+    fscanf(fp, "%d", &size);
+    fclose(fp);
+
+    avgWF *wf = (avgWF *)(sizeof(avgWF));
+    wf->length = size;
+    wf->wave = avg;
+
+    wf = Comparison(waveform, wf, TRANSFER_LEN, TRANSFER_RUNS);
+    saveAvg(avgdir, name, wf->wave, wf->length);
+
+    free(avg);
+    free(wf);
+    free(waveform);
 }
 
 void makeNewProfile(complex *waveform, DIR *dir, char *name) {
@@ -62,19 +93,12 @@ void makeNewProfile(complex *waveform, DIR *dir, char *name) {
     scanf("%s", name);
     mkdir(name, 0777);
     dir = opendir(name); 
-    saveWaveform(dir, name, waveform);
-    complex *avg = DirAvg(dir, name, TRANSFER_LEN, TRANSFER_RUNS);
+    saveWaveform(dir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS);
     mkdir(strcat(name, "avg"), 0777);
     DIR *avgdir = opendir(strcat(name, "avg"));
-    saveWaveform(avgdir, name, avg);
-}
-
-void bin(uint8_t n) {
-    uint8_t i;
-    // for (i = 1 << 7; i > 0; i = i >> 1)
-    //     (n & i) ? printf("1") : printf("0");
-    // for (i = 0; i < 8; i++) // LSB first
-    //     (n & (1 << i)) ? printf("1") : printf("0");
+    saveAvg(avgdir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS);
+    
+    free(waveform);
 }
 
 void parsemem(void* virtual_address, int word_count) {
@@ -88,10 +112,10 @@ void parsemem(void* virtual_address, int word_count) {
         sample_value = p[offset] & ((1<<18)-1);
         sample_count = p[offset] >> 18;
 
-        for (int i = 0; i < 4; i++) {
-            bin(b[offset*4+i]);
-            // printf(" ");
-        }
+        // for (int i = 0; i < 4; i++) {
+        //     bin(b[offset*4+i]);
+        //     // printf(" ");
+        // }
         // printf(" -> [%d]: %02x (%dp)\n", sample_count, sample_value, sample_value*100/((1<<18)-1));
     }
 
@@ -143,32 +167,40 @@ int main(int argc, char **argv) {
     // Perform FFT on frames
     complex *waveform = fft_setup(frames, TRANSFER_LEN, TRANSFER_RUNS);
     if (argv[1][0] == '1') {
-        int response; DIR *dir; char *name;
+        int response; DIR *dir; char *name = (char *)malloc(100 * sizeof(char));
         printf("Save to existing sound profile or create new one? (1/0): ");
         scanf("%d", &response);
         if (response == 1) addToProfile(waveform, dir, name);
         else makeNewProfile(waveform, dir, name);
+        free(name);
     } else if (argv[1][0] == '0') {
-        // Compare to existing sound profiles
         DIR *dir; char *name;
         printf("Enter sound profile name to compare to: ");
+        DIR *d;
+        struct dirent *de;
+        d = opendir(".");
+        while ((de = readdir(d)) != NULL) {
+            if (strcmp(de->d_name, "avg") != 0) {
+                printf("%s\n", de->d_name);
+            }
+        }
         scanf("%s", name);
+
         dir = opendir(strcat(name, "avg"));
         FILE *fp = fopen(name, "r");
+        int size;
+        fscanf(fp, "%d", &size);
         complex *avg = (complex *)malloc(TRANSFER_LEN * TRANSFER_RUNS * sizeof(complex));
         for (int i = 0; fscanf(fp, "%f,%f", &avg[i].Re, &avg[i].Im) != EOF; i++);
+        printf("Loaded sound profile %s\n", name);
         fclose(fp);
 
-        // Compare
-        int count = 0;
-        for (int i = 0; i < TRANSFER_LEN * TRANSFER_RUNS; i++) {
-            // Within 5% of average (Uncertainty)
-            if (waveform[i].Re <= (avg[i].Re + avg[i].Re * 0.05) && 
-            waveform[i].Re >= (avg[i].Re - avg[i].Re * 0.05) && 
-            waveform[i].Im <= (avg[i].Im + avg[i].Im * 0.05) && 
-            waveform[i].Im >= (avg[i].Im - avg[i].Im * 0.05)) count++;
-        }
-        printf("Matched %d/%d samples\n", count, TRANSFER_LEN * TRANSFER_RUNS);
+        avgWF *wf = (avgWF *)(sizeof(avgWF));
+        wf->length = size;
+        wf->wave = avg;
+        wf = Comparison(waveform, wf, TRANSFER_LEN, TRANSFER_RUNS);
+        free(avg);
+        free(wf);
     }
 
     audio_i2s_release(&my_config);

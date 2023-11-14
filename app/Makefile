@@ -5,6 +5,7 @@ CPPFLAGS += -I include/
 CFLAGS   += -g -Wall -O2 -std=c++11
 LDFLAGS  += $(LIBS) -lpthread -lz -rdynamic
 BUILD_DIR = build
+LIBS     += -lm
 
 BINARY = sample256
 OBJ = $(BUILD_DIR)/main.o \
@@ -35,7 +36,7 @@ $(BUILD_DIR)/axi_dma.o: src/axi_dma.c include/axi_dma.h include/misc.h
 $(BUILD_DIR)/wav.o: src/wav.c include/wav.h
 	$(CXX) $(CFLAGS) $(CPPFLAGS) $(LANGFLAG) $< -c -o $@
 
-$(BUILD_DIR)/FFT.o: src/FFT.cpp include/FFT.h
+$(BUILD_DIR)/FFT.o: src/FFT.c include/FFT.h
 	$(CXX) $(CFLAGS) $(CPPFLAGS) $(LANGFLAG) $< -c -o $@
 
 clean:
