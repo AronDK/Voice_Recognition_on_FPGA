@@ -26,6 +26,12 @@
 #ifndef MISC_H
 #define MISC_H
 
+#define NUM_CHANNELS 1  
+#define BPS 24
+#define SAMPLE_RATE 44600 / 2
+#define RECORD_DURATION 10
+#define TRANSFER_RUNS RECORD_DURATION * SAMPLE_RATE / TRANSFER_LEN
+
 #include <stdint.h>
 
 #define _reg_set(BaseAddress, RegOffset, Data) \

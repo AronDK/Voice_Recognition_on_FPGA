@@ -38,13 +38,7 @@
 #include "audio_i2s.h"
 #include "wav.h"
 #include "FFT.h"
-
-
-#define NUM_CHANNELS 1  
-#define BPS 24
-#define SAMPLE_RATE 44600 / 2
-#define RECORD_DURATION 10
-#define TRANSFER_RUNS RECORD_DURATION * SAMPLE_RATE / TRANSFER_LEN
+#include "misc.h"
 
 void addToProfile(complex *waveform, DIR *dir, char *name) {
     printf("\nEnter sound profile name to save to: ");
@@ -93,7 +87,7 @@ void makeNewProfile(complex *waveform, DIR *dir, char *name) {
     scanf("%s", name);
     mkdir(name, 0777);
     dir = opendir(name); 
-    saveWaveform(dir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS);
+    saveWaveform(dir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS - 1);
     mkdir(strcat(name, "avg"), 0777);
     DIR *avgdir = opendir(strcat(name, "avg"));
     saveAvg(avgdir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS);

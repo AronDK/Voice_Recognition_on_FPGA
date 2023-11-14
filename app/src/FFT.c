@@ -13,8 +13,10 @@
 #include <string.h>
 #include <math.h>
 #include <stdbool.h>
-#include "FFT.h"
 
+#include "misc.h"
+#include "FFT.h"
+#include "audio_i2s.h"
 
 void fft( complex *v, int n, complex *tmp ) {
   if(n>1) {			/* otherwise, do nothing and return */
@@ -66,25 +68,29 @@ complex *DirAvg(DIR *dir, char *profileName, int transLen, int transRuns) {
   }
 
   free(next);
-  free(tmp);
   return tmp->wave;
 }
 
-complex *fft_setup(uint32_t frames[][256], int transLens, int transRuns) {
+complex *fft_setup(uint32_t frames[TRANSFER_RUNS][TRANSFER_LEN], int transLens, int transRuns) {
   complex *fft_input = (complex *)malloc(transLens * transRuns * sizeof(complex));
-  for (int i = 0; i < transRuns; i++) {
-      for (int j = 0; j < transLens; j++) {
+  printf("the segfault is in setup\n");
+  int i, j = 0;
+  for (i = 0; i < transRuns; i++) {
+      for (j = 0; j < transLens; j++) {
           fft_input[i * transLens + j].Re = frames[j][i];
           fft_input[i * transLens + j].Im = frames[j][i];
       }
   }
+  printf("%d\n", i * transLens * j);
   complex *tmp = (complex *)malloc(transLens * transRuns * sizeof(complex));
   fft(fft_input, transLens * transRuns, tmp);
   free(tmp);
+  printf("the segfault isn't setup\n");
   return fft_input;
 }
 
 void saveWaveform(DIR *dir, char *filename, complex *waveform, int size) {
+  printf("Saving waveform..., size = %d\n", size);
   if (filename == NULL) {
     time_t seconds;
     seconds = time(NULL);
@@ -95,9 +101,11 @@ void saveWaveform(DIR *dir, char *filename, complex *waveform, int size) {
   
   // Save wave to file
   FILE *fp = fopen(filename, "w");
-  for (int i = 0; i < size; i++) {
+  for (int i = 0; i < size - 1; i++) {
     fprintf(fp, "%f,%f\n", waveform[i].Re, waveform[i].Im);
   }
+  fclose(fp);
+  printf("Saved waveform to %s\n", filename);
 }
 
 avgWF *Comparison(complex *waveform, avgWF *original, int transLen, int transRuns) {

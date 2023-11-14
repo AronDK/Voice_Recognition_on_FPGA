@@ -14,6 +14,9 @@
 #include <stdbool.h>
 #include <math.h>
 
+#include "misc.h"
+#include "audio_i2s.h"
+
 #define q	8		/* for 2^3 points */
 #define N	(1<<q)		/* N-point FFT, iFFT */
 
@@ -29,7 +32,7 @@ typedef struct{complex *wave; int length;} avgWF;
 // FFT
 static void fft( complex *v, int n, complex *tmp );
 // Setup FFT with wav inputs
-complex *fft_setup(uint32_t frames[][256], int transLens, int transRuns);
+complex *fft_setup(uint32_t frames[TRANSFER_RUNS][TRANSFER_LEN], int transLens, int transRuns);
 // Setup FFT with wav inputs
 void saveWaveform(DIR *dir, char *filename, complex *waveform, int size);
 // Average directory
