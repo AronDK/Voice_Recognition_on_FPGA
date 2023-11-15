@@ -60,3 +60,541 @@ INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
 INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtools 27-2312] Device dummy_dap_1 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtools 27-2312] Device dummy_dap_1 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtools 27-2312] Device dummy_dap_1 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtools 27-2312] Device dummy_dap_1 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtools 27-2312] Device dummy_dap_1 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtools 27-2312] Device dummy_dap_1 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2312] Device xck26_0 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtools 27-2312] Device dummy_dap_1 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtools 27-2312] Device dummy_dap_1 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtools 27-2312] Device dummy_dap_1 is no longer available.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-initialize the hardware target.
+Use open_hw_target to re-register the hardware device.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+ERROR: [Labtools 27-2269] No devices detected on target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A.
+Check cable connectivity and that the target board is powered up then
+use the disconnect_hw_server and connect_hw_server to re-register this hardware target.
+ERROR: [Common 17-39] 'open_hw_target' failed due to earlier errors.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+CRITICAL WARNING: [Labtools 27-3421] xck26_0 PL Power Status OFF, cannot connect PL TAP.  Check POR_B signal.
+INFO: [Labtools 27-1435] Device xck26 (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xck26_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xck26_0]
+set_property PROGRAM.FILE {C:/Users/gonin/Documents/COMP3601/COMP3601_TeamNASP/TeamNASP_3601_M2/TeamNASP_3601_M2.runs/impl_1/design_1_wrapper.bin} [get_hw_devices xck26_0]
+program_hw_devices [get_hw_devices xck26_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xck26_0] 0]
+INFO: [Labtools 27-1434] Device xck26 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Xilinx/XFL1HKQULLU0A

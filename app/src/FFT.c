@@ -51,39 +51,52 @@ complex *DirAvg(DIR *dir, char *profileName, int transLen, int transRuns) {
   
   // Initialize cur to first waveform of directory
   printf("Reading directory...\n");
-  while ((de = readdir(dir)) != NULL) {
+  if ((de = readdir(dir)) != NULL) {
     FILE *fp = fopen(de->d_name, "r");
-    for (i = 0; fscanf(fp, "%f,%f", &cur[i].Re, &cur[i].Im) != EOF; i++);
+    printf("filename = %s\n", de->d_name);
+    // Check if filename includes string avg.txt
+    if (strstr(de->d_name, "avg.txt") == NULL) {
+      for (i = 0; fscanf(fp, "%f,%f", &cur[i].Re, &cur[i].Im) != EOF; i++) {
+        if (i < 10000) printf("%f,%f\n", next[i].Re, next[i].Im);
+      }
+    }
     fclose(fp);
-    break;
   }
   avgWF *tmp = (avgWF *)malloc(sizeof(avgWF));
   tmp->length = i;
   tmp->wave = cur;
-  
 
   while ((de = readdir(dir)) != NULL) {     
     FILE *fp = fopen(de->d_name, "r");
-    for (i = 0; fscanf(fp, "%f,%f", &next[i].Re, &next[i].Im) != EOF; i++);
-    fclose(fp);
-    tmp = Comparison(next, tmp, transLen, transRuns);
+    if (fp == NULL) {
+      printf("Error opening file\n");
+      return NULL;
+    }
+
+    for (i = 0; fscanf(fp, "%f,%f", &next[i].Re, &next[i].Im) != EOF; i++) {
+      if (i < 10000) printf("%f,%f\n", next[i].Re, next[i].Im);
+    }
+    printf("invalid pointer is fp\n");
+    // fclose(fp);
+    printf("invalid pointer is not fp\n");
+    printf("filename = %s\n", de->d_name);
+    tmp = Comparison(next, tmp, transLen, transRuns, true);
   }
-  free(next);
   printf("Done calculating average waveform\n");
   return tmp->wave;
 }
 
 complex *fft_setup(uint32_t frames[TRANSFER_RUNS][TRANSFER_LEN], int transLens, int transRuns) {
-  complex *fft_input = (complex *)malloc(transLens * transRuns * sizeof(complex));
+  complex *fft_input = (complex *)malloc(TRANSFER_LEN * TRANSFER_RUNS * sizeof(complex));
   printf("the segfault is in setup\n");
   int i, j = 0;
-  for (i = 0; i < transRuns; i++) {
-      for (j = 0; j < transLens; j++) {
-          fft_input[i * transLens + j].Re = frames[j][i];
-          fft_input[i * transLens + j].Im = frames[j][i];
+  for (i = 0; i < TRANSFER_RUNS; i++) {
+      for (j = 0; j < TRANSFER_LEN; j++) {
+          fft_input[i * TRANSFER_LEN + j].Re = frames[i][j];
+          fft_input[i * TRANSFER_LEN + j].Im = frames[i][j];
       }
+      printf("%d, i = %d, j = %d\n", (i) * TRANSFER_LEN + (j - 1), i, j);
   }
-  printf("%d\n", (i-1) * transLens + (j-1));
   complex *tmp = (complex *)malloc(transLens * transRuns * sizeof(complex));
   fft(fft_input, transLens * transRuns, tmp);
   free(tmp);
@@ -93,16 +106,22 @@ complex *fft_setup(uint32_t frames[TRANSFER_RUNS][TRANSFER_LEN], int transLens, 
 
 void saveWaveform(DIR *dir, char *filename, complex *waveform, int size) {
   printf("Saving waveform..., size = %d\n", size);
-  if (filename == NULL) {
-    time_t seconds;
-    seconds = time(NULL);
-    char time_str[20];
-    sprintf(time_str, "%ld", seconds);
-    filename = strcat(time_str, ".txt");
-  }
+  char *dataname = (char *)malloc(100 * sizeof(char));
+  time_t seconds;
+  seconds = time(NULL);
+  char time_str[20];
+  sprintf(time_str, "%ld", seconds);
+  dataname = strcat(time_str, ".txt");
   
+  chdir(filename);
   // Save wave to file
-  FILE *fp = fopen(filename, "w");
+  FILE *fp = fopen(dataname, "w");
+  if (fp == NULL) {
+    perror("Error opening file");
+    return;
+  }
+
+  printf("Opened file\n");
   for (int i = 0; i < size - 1; i++) {
     fprintf(fp, "%f,%f\n", waveform[i].Re, waveform[i].Im);
   }
@@ -110,41 +129,40 @@ void saveWaveform(DIR *dir, char *filename, complex *waveform, int size) {
   printf("Saved waveform to %s\n", filename);
 }
 
-avgWF *Comparison(complex *waveform, avgWF *original, int transLen, int transRuns) {
+avgWF *Comparison(complex *waveform, avgWF *original, int transLen, int transRuns, bool save) {
   printf("Comparing waveforms...\n");
   int count = 0; int *matched = (int *)malloc(original->length * sizeof(int));
-  for (int i = 0; i < transLen * transRuns; i++) {
-    // Within 5% of average (Uncertainty)
-    if (waveform[i].Re <= (original->wave[i].Re + original->wave[i].Re * 0.05) && 
-      waveform[i].Re >= (original->wave[i].Re - original->wave[i].Re * 0.05) && 
-      waveform[i].Im <= (original->wave[i].Im + original->wave[i].Im * 0.05) && 
-      waveform[i].Im >= (original->wave[i].Im - original->wave[i].Im * 0.05)) {
+  for (int i = 0; i < original->length; i++) {
+    if (waveform[i].Re <= (original->wave[i].Re * 1.8) && 
+      waveform[i].Re >= (original->wave[i].Re * (-1.8)) && 
+      waveform[i].Im <= (original->wave[i].Im * 1.8) && 
+      waveform[i].Im >= (original->wave[i].Im * (-1.8))) {
       count++;
       matched[i] = 1;
+      if (i < 10000) printf("%f,%f, i = %d\n", original->wave[i].Re, original->wave[i].Im, i);
     }
   }
   printf("Matched %d/%d samples\n", count, transLen * transRuns);
 
-  if (count >= (transLen * transRuns) * 0.8) {
-    printf("Matched sound profile\n");
-    // Remove points in original that do not match with new waveform
-    for (int i = 0; i < transLen * transRuns; i++) {
+  // printf("Matched sound profile\n");
+  // Remove points in original that do not match with new waveform
+  if (save) {
+    for (int i = 0; i < original->length; i++) {
       if (matched[i] == 0) {
         original->wave[i].Re = -1;
         original->wave[i].Im = -1;
       }
     }
   }
-
-  original->length = count;
-  free(matched);
+  
+  // free(matched);
   printf("Done comparing waveforms\n");
   return original;
 }
 
 void saveAvg(DIR *dir, char *filename, complex *wf, int size) {
   printf("Saving average waveform...\n");
-  FILE *fp = fopen(filename, "w");
+  FILE *fp = fopen(strcat(filename, "avg.txt"), "w");
   fprintf(fp, "%d\n", size);
   for (int i = 0; i < size; i++) {
     fprintf(fp, "%f,%f\n", wf[i].Re, wf[i].Im);

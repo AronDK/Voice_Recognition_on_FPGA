@@ -42,17 +42,6 @@
 
 void addToProfile(complex *waveform, DIR *dir, char *name) {
     printf("\nEnter sound profile name to save to: ");
-
-    // Print all sound profiles avaliable, ignore avg folders
-    DIR *d;
-    struct dirent *de;
-    d = opendir(".");
-    while ((de = readdir(d)) != NULL) {
-        if (strcmp(de->d_name, "avg") != 0) {
-            printf("%s\n", de->d_name);
-        }
-    }
-
     scanf("%s", name);        
     // Find Directory
     dir = opendir(name);
@@ -61,23 +50,43 @@ void addToProfile(complex *waveform, DIR *dir, char *name) {
         scanf("%s", name);
         dir = opendir(name);
     }
+
     saveWaveform(dir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS);
-
+    printf("averaging...\n");
     complex *avg = DirAvg(dir, name, TRANSFER_LEN, TRANSFER_RUNS);
-    DIR *avgdir = opendir(strcat(name, "avg"));
-    FILE *fp = fopen(name, "r");
+    printf("Averaged\n");
+    char *name2 = (char *)malloc(1000 * sizeof(char));
+    strcpy(name2, name);
+    FILE *fp = fopen(strcat(name2, "avg.txt"), "r");
+
+    if (fp == NULL) {
+        printf("Error opening file\n");
+        exit(1);
+    }
+
     int size;
-    fscanf(fp, "%d", &size);
-    fclose(fp);
+    printf("saving size\n");
+    fscanf(fp, "%d\n", &size);
+    // fclose(fp);
 
-    avgWF *wf = (avgWF *)(sizeof(avgWF));
+    printf("Creating waveform\n");
+    avgWF *wf = (avgWF *)malloc(sizeof(avgWF));
+    if (wf == NULL) {
+        printf("Error: Out of memory\n");
+        exit(1);
+    }
+
+    printf("Mallocced\n");
     wf->length = size;
+    printf("Set length\n");
     wf->wave = avg;
+    printf("Set wave\n");
 
-    wf = Comparison(waveform, wf, TRANSFER_LEN, TRANSFER_RUNS);
-    saveAvg(avgdir, name, wf->wave, wf->length);
-
-    free(avg);
+    printf("Comparing\n");
+    wf = Comparison(waveform, wf, TRANSFER_LEN, TRANSFER_RUNS, true);
+    saveAvg(dir, name, wf->wave, wf->length);
+    printf("Freeing Vars\n");
+    // free(avg);
     free(wf);
     free(waveform);
 }
@@ -87,11 +96,8 @@ void makeNewProfile(complex *waveform, DIR *dir, char *name) {
     scanf("%s", name);
     mkdir(name, 0777);
     dir = opendir(name); 
-    saveWaveform(dir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS - 1);
-    mkdir(strcat(name, "avg"), 0777);
-    DIR *avgdir = opendir(strcat(name, "avg"));
-    saveAvg(avgdir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS);
-    
+    saveWaveform(dir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS);
+    saveAvg(dir, name, waveform, TRANSFER_LEN*TRANSFER_RUNS);    
     free(waveform);
 }
 
@@ -161,38 +167,51 @@ int main(int argc, char **argv) {
     // Perform FFT on frames
     complex *waveform = fft_setup(frames, TRANSFER_LEN, TRANSFER_RUNS);
     if (argv[1][0] == '1') {
-        int response; DIR *dir; char *name = (char *)malloc(100 * sizeof(char));
+        int response; DIR *dir; char *name = (char *)malloc(1000 * sizeof(char));
         printf("Save to existing sound profile or create new one? (1/0): ");
         scanf("%d", &response);
         if (response == 1) addToProfile(waveform, dir, name);
         else makeNewProfile(waveform, dir, name);
         free(name);
     } else if (argv[1][0] == '0') {
-        DIR *dir; char *name;
+        DIR *dir; char *name = (char *)malloc(1000 * sizeof(char));
         printf("Enter sound profile name to compare to: ");
-        DIR *d;
-        struct dirent *de;
-        d = opendir(".");
-        while ((de = readdir(d)) != NULL) {
-            if (strcmp(de->d_name, "avg") != 0) {
-                printf("%s\n", de->d_name);
-            }
-        }
         scanf("%s", name);
 
-        dir = opendir(strcat(name, "avg"));
-        FILE *fp = fopen(name, "r");
+        printf("Loading sound profile %s\n", name);
+        dir = opendir(name);
+        chdir(name);
+        FILE *fp = fopen(strcat(name, "avg.txt"), "r");
+        if (fp == NULL) {
+            printf("Error opening file\n");
+            exit(1);
+        }
+
+        printf("saving size\n");
         int size;
-        fscanf(fp, "%d", &size);
+        fscanf(fp, "%d\n", &size);
+        printf("loading sound profile\n");
         complex *avg = (complex *)malloc(TRANSFER_LEN * TRANSFER_RUNS * sizeof(complex));
-        for (int i = 0; fscanf(fp, "%f,%f", &avg[i].Re, &avg[i].Im) != EOF; i++);
+        for (int i = 0; fscanf(fp, "%f,%f\n", &avg[i].Re, &avg[i].Im) != EOF; i++);
         printf("Loaded sound profile %s\n", name);
         fclose(fp);
 
-        avgWF *wf = (avgWF *)(sizeof(avgWF));
+        printf("Creating waveform\n");
+        avgWF *wf = (avgWF *)malloc(sizeof(avgWF));
+        if (wf == NULL) {
+            printf("Error: Out of memory\n");
+            exit(1);
+        }
+
+        printf("Mallocced\n");
         wf->length = size;
+        printf("Set length\n");
         wf->wave = avg;
-        wf = Comparison(waveform, wf, TRANSFER_LEN, TRANSFER_RUNS);
+        printf("Set wave\n");
+
+        printf("Comparing\n");
+        wf = Comparison(waveform, wf, TRANSFER_LEN, TRANSFER_RUNS, false);
+        printf("freeing vars\n");
         free(avg);
         free(wf);
     }

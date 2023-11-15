@@ -38,6 +38,6 @@ void saveWaveform(DIR *dir, char *filename, complex *waveform, int size);
 // Average directory
 complex *DirAvg(DIR *dir, char *profileName, int transLen, int transRuns); 
 // Compares 2 waveforms, returns array of matched indexes - 1 if they are the same, 0 if they are different 
-avgWF *Comparison(complex *waveform, avgWF *original, int transLen, int transRuns);
+avgWF *Comparison(complex *waveform, avgWF *original, int transLen, int transRuns, bool save);
 // Saves avgWF struct
 void saveAvg(DIR *dir, char *filename, complex *wf, int size);
