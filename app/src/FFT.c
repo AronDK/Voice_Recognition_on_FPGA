@@ -43,12 +43,14 @@ void fft( complex *v, int n, complex *tmp ) {
 }
 
 complex *DirAvg(DIR *dir, char *profileName, int transLen, int transRuns) {
+  printf("Calculating average waveform...\n");
   struct dirent *de;
   int i = 0;
   complex *cur = (complex *)malloc(transLen * transRuns * sizeof(complex));
   complex *next = (complex *)malloc(transLen * transRuns * sizeof(complex));
   
   // Initialize cur to first waveform of directory
+  printf("Reading directory...\n");
   while ((de = readdir(dir)) != NULL) {
     FILE *fp = fopen(de->d_name, "r");
     for (i = 0; fscanf(fp, "%f,%f", &cur[i].Re, &cur[i].Im) != EOF; i++);
@@ -66,8 +68,8 @@ complex *DirAvg(DIR *dir, char *profileName, int transLen, int transRuns) {
     fclose(fp);
     tmp = Comparison(next, tmp, transLen, transRuns);
   }
-
   free(next);
+  printf("Done calculating average waveform\n");
   return tmp->wave;
 }
 
@@ -81,7 +83,7 @@ complex *fft_setup(uint32_t frames[TRANSFER_RUNS][TRANSFER_LEN], int transLens, 
           fft_input[i * transLens + j].Im = frames[j][i];
       }
   }
-  printf("%d\n", i * transLens * j);
+  printf("%d\n", (i-1) * transLens + (j-1));
   complex *tmp = (complex *)malloc(transLens * transRuns * sizeof(complex));
   fft(fft_input, transLens * transRuns, tmp);
   free(tmp);
@@ -109,6 +111,7 @@ void saveWaveform(DIR *dir, char *filename, complex *waveform, int size) {
 }
 
 avgWF *Comparison(complex *waveform, avgWF *original, int transLen, int transRuns) {
+  printf("Comparing waveforms...\n");
   int count = 0; int *matched = (int *)malloc(original->length * sizeof(int));
   for (int i = 0; i < transLen * transRuns; i++) {
     // Within 5% of average (Uncertainty)
@@ -134,13 +137,18 @@ avgWF *Comparison(complex *waveform, avgWF *original, int transLen, int transRun
   }
 
   original->length = count;
+  free(matched);
+  printf("Done comparing waveforms\n");
   return original;
 }
 
 void saveAvg(DIR *dir, char *filename, complex *wf, int size) {
+  printf("Saving average waveform...\n");
   FILE *fp = fopen(filename, "w");
   fprintf(fp, "%d\n", size);
   for (int i = 0; i < size; i++) {
     fprintf(fp, "%f,%f\n", wf[i].Re, wf[i].Im);
   }
+  fclose(fp);
+  printf("Saved average waveform to %s\n", filename);
 }
