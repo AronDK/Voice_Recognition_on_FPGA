@@ -1,5 +1,5 @@
-# COMP3601-Project  
-COMP3601 FPGA Project
+# Voice Recongition on Kria FPGA 
+Originally COMP3601 FPGA Project
 
 **Members**
 - Priyansh Mittal (z5501423)
